@@ -1,4 +1,7 @@
 import { isWebp } from "./modules/isWebp.js";     // проверяет поддерживает ли браузер формат webp
+import { swiperDish, swiperToday } from "./modules/swiper.js"; // файл для слайдеров
+
+
 
 isWebp();
 
@@ -10,38 +13,4 @@ isWebp();
 //    burgerMenu.classList.toggle('menu__burger-close');
 // });;
 
-// const swiperDish = new Swiper('.swiper.swiper-dish', {
-//    direction: 'horizontal',
 
-//    breakpoints: {
-//       1250: {
-//          direction: 'vertical',
-//       }
-//    },
-
-//    loop: true,
-//    autoplay: {
-//       delay: 5000,
-//    },
-//    effect: 'fade',
-//    fadeEffect: {
-//       crossFade: true,
-//    },
-//    pagination: {
-//       el: '.swiper-pagination',
-//       clickable: true,
-//       renderBullet: function (index, className) {
-//          return '<span class="' + className + '">  <span class="swiper-pagination__center"> </span> </span>';
-//       },
-//    },
-//    mousewheel: {
-//       invert: true,
-//    },
-// });
-
-
-
-const arrSpoilers = document.querySelectorAll('[data-spoilers]');
-if (arrSpoilers.length > 0) {
-
-}
