@@ -16,7 +16,7 @@
 
 <body>
 
-   
+   <!-- 
    <div class="debug-grid">
    <div>
       <div>
@@ -35,25 +35,42 @@
       </div>
    </div>
 </div>
-   
+    -->
 
    <div class="header ">
    <a href="#" class="logo"><img src="./img/logo.png" alt="logo"></a>
 
-   <!-- сделать снипет для топ меню -->
-   <nav class="menu-body">
+   <!-- заготовка для меню -->
+   <div class="wrap-nenu">
+      <button type="button" class="burger-menu">
+         <span></span>
+         <span></span>
+         <span></span>
+      </button>
+      <nav class="menu-body">
+         <ul class="menu__list">
+            <li class="menu__item">
+               <a class="menu__link" href="#">menu item</a>
+               <button data-spoiler type="button" class="icon-menu-arrow"></button> <!-- споилер в отдельной ветке-->
+               <ul class="menu__sub-menu-list">
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+               </ul>
+            </li>
+            <li class="menu__item"><a class="menu__link" href="#">menu item</a></li>
+            <li class="menu__item"><a class="menu__link" href="#">menu item</a></li>
+         </ul>
+      </nav>
+   </div>
 
-      <ul class="menu__list">
-         <li class="menu__item"><a class="menu__link" href="#">home</a></li>
-         <li class="menu__item"><a class="menu__link" href="#">menu</a></li>
-         <li class="menu__item"><a class="menu__link" href="#">reservation</a></li>
-         <li class="menu__item"><a class="menu__link" href="#">recipe</a></li>
-         <li class="menu__item"><a class="menu__link" href="#">blog</a></li>
-         <li class="menu__item"><a class="menu__link" href="#">pages</a></li>
-         <li class="menu__item"><a class="menu__link" href="#">contact</a></li>
-      </ul>
-
-   </nav>
+   <div class="wrap-serch-form">
+      <button type="button" class="serch-form-icon _icon-serch">
+         <!-- кнопка за которой будет спрятана форма при адаптиве-->
+      </button>
+      <form action="#" class="serch-form__item">
+         <button type="submit" class="serch-form-icon _icon-serch"> </button>
+         <input autocomplete="off" type="text" name="form" class="serch-form__input">
+      </form>
+   </div>
 
 
 
@@ -84,7 +101,7 @@
 
    <main>
 
-      <div class="swiper-dish swiper">
+      <!-- <div class="swiper-dish swiper">
    <div class="swiper-wrapper">
       <div class="swiper-slide">
          <div class="wrap-img dish__wrap-img"> <img src="@img/dish-bg-1.jpg" alt=""></div>
@@ -97,12 +114,16 @@
       </div>
    </div>
    <div class="swiper-pagination-dish swiper-pagination"></div>
-</div>
+</div> -->
 
    </main>
 
 
    
+
+   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/mobile-detect@1.4.5/mobile-detect.min.js"></script>
+   <script src="js/app.min.js"></script>
 </body>
 
 

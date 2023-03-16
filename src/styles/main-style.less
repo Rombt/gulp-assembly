@@ -5,5 +5,21 @@
 @import "variables.less";
 @import "mixins.less";
 
+.debug-grid {
+   .debug(rgba(187, 241, 250, 0.1), 1px rgba(201, 202, 191, 0.5) solid);
+
+   z-index: 100;
+}
+
+
+body {
+   color: @base_color_font;
+}
+
+
+
 @import 'sections/heder.less';
+
+@import 'sections/body.less';
+
 @import 'sections/footer.less';
