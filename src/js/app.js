@@ -6,10 +6,6 @@ import { isWebp, isTouchScreen } from "./modules/scripts.js";
 window.onload = function () {
    isWebp();
 
-
-
-
-
    document.addEventListener("click", documentAction);
    function documentAction(e) {
       /**
@@ -31,13 +27,6 @@ window.onload = function () {
          }
       }
    };
-
-
-
-
-
-
-
 
 
 
