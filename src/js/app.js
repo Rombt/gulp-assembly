@@ -4,7 +4,7 @@ import { isWebp, isTouchScreen } from "./modules/scripts.js";
 import { Burger } from "./modules/burger.js";
 
 
-window.onload = function() {
+window.onload = function () {
     isWebp();
 
 
@@ -19,7 +19,7 @@ window.onload = function() {
     }
 
     const myBurger = new Burger(burgerMenu);
-    myBurger.run();
+    myBurger.init();
 
 
     // burger_menu
