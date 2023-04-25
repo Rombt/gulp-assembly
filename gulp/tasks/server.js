@@ -2,10 +2,12 @@ import process from 'process';
 
 let absPath = process.cwd();
 
+
 export const server = (done) => {
 
     let rootFolder = app.path.prodFolder.slice(2);
     let proxyPath = '';
+
 
     if (absPath.includes('OSPanel')) {
         proxyPath = `http://rombt/${app.path.rootFolder}/${rootFolder}`; // домашний комп

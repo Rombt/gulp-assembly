@@ -1,7 +1,7 @@
 import * as nodePath from 'path';
 
 const rootFolder = nodePath.basename(nodePath.resolve());
-const prodFolder = './dist';
+const prodFolder = './docs';        //  dist заменил не docs для git pages
 const srcFolder = './src';
 
 export const path = {
@@ -12,7 +12,7 @@ export const path = {
         images: `${prodFolder}/img/`,
         fonts: `${prodFolder}/fonts/`,
         files: `${prodFolder}/files/`,
-        svgicons: `${srcFolder}/img/`, // так же как и файлы шрифтов иканки генерируются только один раз, но переносить их нужно при каждой сборкой
+        svgicons: `${srcFolder}/img/`,        // так же как и файлы шрифтов иканки генерируются только один раз, но переносить их нужно при каждой сборкой
     },
     src: {
         php: `${srcFolder}/*.{php,html}`, // копирую только итоговые файлы которые будут собираться гампом из частей предназначено для HTML!
@@ -25,9 +25,9 @@ export const path = {
         svgicons: `${srcFolder}/svgicons/*.svg`,
     },
     watch: {
-        js: `${srcFolder}/js/**/*.js`,
-        styles: `${srcFolder}/styles/**/*.{scss,less}`,
         php: `${srcFolder}/**/*.{php,html}`, // слежу за всеми 
+        styles: `${srcFolder}/styles/**/*.{scss,less}`,
+        js: `${srcFolder}/js/**/*.js`,
         images: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
         files: `${srcFolder}/files/**/*.*`
     },
@@ -35,5 +35,5 @@ export const path = {
     prodFolder: prodFolder,
     srcFolder: srcFolder,
     rootFolder: rootFolder,
-    ftp: 'htdocs', // указать целевую папку на сервере, есле её нет то она будет создана автоматически, пусто -- корневая папка сервера
+    ftp: 'htdocs',        // указать целевую папку на сервере, есле её нет то она будет создана автоматически, пусто -- корневая папка сервера
 }
