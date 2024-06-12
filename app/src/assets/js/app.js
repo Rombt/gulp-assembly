@@ -4,7 +4,7 @@ import './modules/popup.js';
 import './modules/spoiler.js';
 import './modules/tabs.js';
 import './modules/arrowsInputNumberStyle.js';
-import './modules/classHorizontalMenu.js';
+import './modules/HorizontalMenu.js';
 // import './modules/sliders.js';
 
 
