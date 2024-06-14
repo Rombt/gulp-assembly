@@ -6,30 +6,26 @@ let currentDir;
 if (typeof __dirname !== 'undefined') {
   currentDir = __dirname;
 } else {
-  const __filename = fileURLToPath(
-    import.meta.url);
+  const __filename = fileURLToPath(import.meta.url);
   currentDir = nodePath.dirname(__filename);
 }
 
 const THEME_NAME = nodePath.basename(nodePath.resolve(currentDir, '..', '..', '..'));
 const ROOT_PATH = nodePath.resolve(currentDir, '..', '..').replace(/\\/g, '/');
 
-
 const srcFolder = `${ROOT_PATH}/src`;
 const prodFolder = `${ROOT_PATH}/..`;
 const prodPluginName = `${THEME_NAME}-core`; // set name your plugin for production version
 const prodPlugFolder = `${ROOT_PATH}/../../../plugins/${prodPluginName}`;
 
-
-
 export const path = {
-
   ThemeName: THEME_NAME,
-  srcPluginName: 'core-plugin', // set name your plugin for development version 
+  srcPluginName: 'core-plugin', // set name your plugin for development version
   RootPath: ROOT_PATH,
   proxy: [
-    `http://rombt/gulp-assembly-1.0`,
-    `http://web/rombt/gulp-assembly`,
+    `http://impex-rombt/`,
+    `http://web/impexmash/`,
+    // `http://web/impex-rombt/`,
   ],
 
   get src() {
@@ -37,7 +33,7 @@ export const path = {
       html: `${srcFolder}/html`,
       php: `${srcFolder}`,
       plug: `${srcFolder}/${this.srcPluginName}`,
-    }
+    };
   },
 
   get prod() {
@@ -45,7 +41,7 @@ export const path = {
       html: `${prodFolder}/docs`,
       php: `${prodFolder}`,
       plug: prodPlugFolder,
-    }
+    };
   },
 
   get watch() {
@@ -54,25 +50,24 @@ export const path = {
         `${this.src.php}/assets/styles/**/*.less`,
         `${this.src.php}/assets/styles/**/*.scss`,
         `${this.src.php}/${this.srcPluginName}/assets/styles/**/*.less`,
+        `${this.src.php}/${this.srcPluginName}/inc/gutenberg/blocks/**/*.css`,
       ],
       images: [
         `${this.src.php}/assets/img/**/*.{jpg,jpeg,png,gif,webp,svg,ico}`,
-        `${this.src.php}/${this.srcPluginName}/assets/img/**/*.{jpg,jpeg,png,gif,webp,svg,ico}`
+        `${this.src.php}/${this.srcPluginName}/assets/img/**/*.{jpg,jpeg,png,gif,webp,svg,ico}`,
       ],
       js: [
         `${this.src.php}/assets/js/**/*.js`,
-        `${this.src.php}/${this.srcPluginName}/assets/js/**/*.js`
+        `${this.src.php}/${this.srcPluginName}/assets/js/**/*.js`,
+        `${this.src.php}/${this.srcPluginName}/inc/gutenberg/blocks/**/*.js`,
       ],
-      php: [
-        `${this.src.php}/**/*.{php,html}`,
-        `${this.src.php}/${this.srcPluginName}/**/*.{php,html}`
-      ],
+      php: [`${this.src.php}/**/*.{php,html}`, `${this.src.php}/${this.srcPluginName}/**/*.{php,html}`],
       fonts: [
         `${this.src.php}/assets/fonts/**/*.{woff,woff2}`,
         `${this.src.php}/${this.srcPluginName}/assets/fonts/**/*.{woff,woff2}`,
       ],
       copy: this.copy.src,
-    }
+    };
   },
 
   get php() {
@@ -103,7 +98,7 @@ export const path = {
       },
     };
 
-    return this.resolvDest(path);
+    return this.resolveDest(path);
   },
 
   get styles() {
@@ -112,22 +107,17 @@ export const path = {
         html: [
           `${this.src.php}/assets/styles/main-style${app.isSASS ? '.sass' : '.less'}`, //! null element of array will use for generate styles file of fonts
         ],
-        php: [
-          `${this.src.php}/assets/styles/main-style${app.isSASS ? '.sass' : '.less'}`,
-        ],
-        plug: [
-          `${this.src.plug}/assets/styles/main-style${app.isSASS ? '.sass' : '.less'}`,
-        ],
+        php: [`${this.src.php}/assets/styles/main-style${app.isSASS ? '.sass' : '.less'}`],
+        plug: [`${this.src.plug}/assets/styles/main-style${app.isSASS ? '.sass' : '.less'}`],
       },
       prod: {
         html: `${this.prod.html}/assets/styles`,
         php: `${this.prod.php}/assets/styles`,
         plug: `${this.prod.plug}/assets/styles`,
       },
-
     };
 
-    return this.resolvDest(path);
+    return this.resolveDest(path);
   },
 
   get images() {
@@ -144,55 +134,40 @@ export const path = {
       },
     };
 
-    return this.resolvDest(path);
+    return this.resolveDest(path);
   },
 
   get svg() {
     const path = {
       src: {
-        html: [
-          `${this.src.php}/assets/img/svg/*.svg`,
-        ],
-        php: [
-          `${this.src.php}/assets/img/svg/*.svg`,
-        ],
-        plug: [
-          `${this.src.plug}/assets/img/svg/*.svg`,
-        ],
+        html: [`${this.src.php}/assets/img/svg/*.svg`],
+        php: [`${this.src.php}/assets/img/svg/*.svg`],
+        plug: [`${this.src.plug}/assets/img/svg/*.svg`],
       },
       prod: {
         html: `${this.src.php}/assets/img/icons`,
         php: `${this.src.php}/assets/img/icons`,
         plug: `${this.src.plug}/assets/img/icons`,
       },
-
     };
 
-    return this.resolvDest(path);
+    return this.resolveDest(path);
   },
 
   get fonts() {
     const path = {
       src: {
-        html: [
-          `${this.src.php}/assets/fonts`,
-        ],
-        php: [
-          `${this.src.php}/assets/fonts`,
-        ],
-        plug: [
-          `${this.src.plug}/assets/fonts`,
-        ],
+        html: [`${this.src.php}/assets/fonts`],
+        php: [`${this.src.php}/assets/fonts`],
+        plug: [`${this.src.plug}/assets/fonts`],
       },
       prod: {
         html: `${this.prod.html}/assets/fonts`,
         php: `${this.prod.php}/assets/fonts`,
         plug: `${this.prod.plug}/assets/fonts`,
       },
-
     };
-
-    return this.resolvDest(path);
+    return this.resolveDest(path);
   },
 
   get js() {
@@ -206,10 +181,10 @@ export const path = {
         html: `${this.prod.html}/assets/js`,
         php: `${this.prod.php}/assets/js`,
         plug: `${this.prod.plug}/assets/js`,
-      }
+      },
     };
 
-    return this.resolvDest(path);
+    return this.resolveDest(path);
   },
 
   get copy() {
@@ -230,6 +205,8 @@ export const path = {
         ],
         plug: [
           `${this.src.php}/${this.srcPluginName}/README.md`,
+          `${this.src.php}/${this.srcPluginName}/inc/gutenberg/blocks/**/*.css`,
+          `${this.src.php}/${this.srcPluginName}/inc/gutenberg/blocks/**/*.js`,
         ],
       },
       prod: {
@@ -237,29 +214,23 @@ export const path = {
         php: `${this.prod.php}`,
         plug: `${this.prod.plug}`,
       },
-
     };
 
-    return this.resolvDest(path);
+    return this.resolveDest(path);
   },
 
   get ftp() {
-
     return {
       html: `htdocs`,
       php: `htdocs/wp-content/themes/${this.ThemeName}`,
       plug: `htdocs/wp-content/plugins/${prodPluginName}`,
-    }
-
+    };
   },
 
   get clear() {
     const path = {
       src: {
-        html: [
-          `${this.prod.html}/**/*.*`,
-          `!${this.prod.html}/.gitkeep`
-        ],
+        html: [`${this.prod.html}/**/*.*`, `!${this.prod.html}/.gitkeep`],
         php: [
           `${this.prod.php}/**/*.*`,
           `!${this.prod.php}/app/**/*.*`,
@@ -268,55 +239,46 @@ export const path = {
           `!${this.prod.php}/docs/**/*.*`,
           `!${this.prod.php}/${this.ThemeName}_core.zip`,
           `!${this.prod.php}/${this.ThemeName}_wp.zip`,
-          `!${this.prod.php}/${this.ThemeName}_html.zip`
+          `!${this.prod.php}/${this.ThemeName}_html.zip`,
         ],
-        plug: [
-          `${this.prod.plug}/**/*.*`,
-        ],
+        plug: [`${this.prod.plug}/**/*.*`],
       },
       prod: {},
+    };
 
-    }
-
-    return this.resolvDest(path);
+    return this.resolveDest(path);
   },
 
   selectSrcPath(path, ext) {
-
     if ((Array.isArray(path) && path.length === 0) || (typeof path === 'string' && path.length === 0)) {
-      console.log("app.path.copy.src is empty");
+      console.log('app.path.copy.src is empty');
       return false;
     }
 
-    return Array.isArray(path) ?
-      path.map(el => `${el}${ext}`) :
-      `${app.path.svg.dest}${ext}`;
+    return Array.isArray(path) ? path.map(el => `${el}${ext}`) : `${app.path.svg.dest}${ext}`;
   },
 
   selectDestPath(file, arrDestPath) {
-
     if (typeof arrDestPath === 'string') {
       return arrDestPath;
     } else if (arrDestPath.length === 0) {
-      console.log("Path of destination is empty!!!");
+      console.log('Path of destination is empty!!!');
       return file.path;
     }
 
-    const isCorePlugin = (file) => file.path.includes(this.srcPluginName) || file.path.includes('-core');
+    const isCorePlugin = file => file.path.includes(this.srcPluginName) || file.path.includes('-core');
     return isCorePlugin(file) ? arrDestPath[1] : arrDestPath[0];
   },
 
   clearForTask(currentPath, destPath) {
-
     if (Array.isArray(destPath)) {
-      destPath = (currentPath.includes(this.srcPluginName) || currentPath.includes('-core')) ? destPath[1] : destPath[0];
+      destPath = currentPath.includes(this.srcPluginName) || currentPath.includes('-core') ? destPath[1] : destPath[0];
     }
 
     let lastFolder = nodePath.basename(destPath);
     let indexLastFolder = currentPath.lastIndexOf(lastFolder);
 
     if (indexLastFolder == -1) {
-
       if (currentPath.includes(nodePath.basename(this.src.html))) {
         lastFolder = nodePath.basename(this.src.html);
       } else if (currentPath.includes(this.srcPluginName)) {
@@ -324,33 +286,47 @@ export const path = {
       } else {
         lastFolder = nodePath.basename(this.src.php);
       }
-      indexLastFolder = Math.max(currentPath.lastIndexOf(`/${lastFolder}`), currentPath.lastIndexOf(`\\${lastFolder}`)) + 1; // для того что бы исключить возможные совподения имени папки и расширения
+      indexLastFolder =
+        Math.max(currentPath.lastIndexOf(`/${lastFolder}`), currentPath.lastIndexOf(`\\${lastFolder}`)) + 1; // для того что бы исключить возможные совподения имени папки и расширения
     }
     let clearPath = nodePath.join(destPath, currentPath.substring(indexLastFolder + lastFolder.length));
-
 
     app.plugins.del(clearPath, { force: true });
   },
 
-  resolvDest(path) {
+  resolveDest(path) {
     return {
-      src: (app.isWP && app.forPlugin) ? [...path.src.php, ...path.src.plug] : (app.isWP ? path.src.php : (app.forPlugin ? path.src.plug : path.src.html)),
-      ...((Object.keys(path.prod).length !== 0) ? {
-        dest: (app.isWP && app.forPlugin) ? [path.prod.php, path.prod.plug] : (app.isWP ? path.prod.php : (app.forPlugin ? path.prod.plug : path.prod.html))
-      } : {}),
-    }
+      src:
+        app.isWP && app.forPlugin
+          ? [...path.src.php, ...path.src.plug]
+          : app.isWP
+          ? path.src.php
+          : app.forPlugin
+          ? path.src.plug
+          : path.src.html,
+      ...(Object.keys(path.prod).length !== 0
+        ? {
+            dest:
+              app.isWP && app.forPlugin
+                ? [path.prod.php, path.prod.plug]
+                : app.isWP
+                ? path.prod.php
+                : app.forPlugin
+                ? path.prod.plug
+                : path.prod.html,
+          }
+        : {}),
+    };
   },
 
-
   //--------  неспользуемые но рабочие  --------------
-  objClearForTask(path) { // сохранить!!
-
+  objClearForTask(path) {
+    // сохранить!!
 
     function modifyArray(array) {
       return array.map(item => item.replace(this.src.php, this.prod.php));
     }
     let bound_ModifyArray = modifyArray.bind(this);
-
 
     function processObject(obj) {
       return Object.fromEntries(
@@ -371,20 +347,24 @@ export const path = {
   old_var_clearForTask(srcPath, prodPath) {
     /**
      *   ! if srcPath hasn't file name will be returned srcPath without changes
-     * 
+     *
      */
 
     if ((Array.isArray(srcPath) && srcPath.length === 0) || (Array.isArray(prodPath) && prodPath.length === 0)) {
-      console.log("The path you provided is empty");
+      console.log('The path you provided is empty');
       return false;
     }
 
-    return srcPath.map((el, index) => {
-      return el.map((el_2) => {
-        try { return prodPath[index] + el_2.match(/\/([^/]+\.[a-z]+)$/i)[0]; } catch { return el; }
+    return srcPath
+      .map((el, index) => {
+        return el.map(el_2 => {
+          try {
+            return prodPath[index] + el_2.match(/\/([^/]+\.[a-z]+)$/i)[0];
+          } catch {
+            return el;
+          }
+        });
       })
-    }).reduce((acc, curr) => acc.concat(curr), []);;
-
+      .reduce((acc, curr) => acc.concat(curr), []);
   },
-
-}
+};

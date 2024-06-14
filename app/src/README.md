@@ -1,12 +1,11 @@
+
 #  Gulp assembly for HTML coding and WordPress developement
 
 It is based on [Фрілансер по життю](https://youtu.be/jU88mLuLWlk) ***Thank you very much Zhenya!!***
 
-  
+
 
 Performs all necessary operations for fast and convenient development of projects of any complexity. Main features include:
-
-  
 
 - Two working modes: development and production
 
@@ -26,18 +25,6 @@ Performs all necessary operations for fast and convenient development of project
 
 - And many other features
 
-  
-  
-
-###  Designed for
-
-+ html coding
-
-with htmlinclude end css (less/sass)
-
-+ development of WP themes and plagins
-
-+ js
 
 all js files are compiled into the main file
 
