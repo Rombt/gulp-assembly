@@ -1,20 +1,22 @@
 <?php
 
 
-require_once get_template_directory() . '/inc/functions/class-tgm-plugin-activation.php';
-require_once get_template_directory() . '/inc/Redux/redux-options.php';
-require_once get_template_directory() . '/inc/functions/general-front.php';
+define( 'rmbt_PATH_THEME', get_template_directory() );
+define( 'rmbt_URL_THEME', esc_url( get_template_directory_uri() ) );
 
+require_once get_template_directory() . '/inc/functions/class-tgm-plugin-activation.php';
+require_once get_template_directory() . '/inc/functions/general-front.php';
 // require_once get_template_directory() . '/inc/functions/comment_default.php';
 // require_once get_template_directory() . '/inc/functions/ajax.php';
+
+if ( class_exists( 'ReduxFramework' ) ) {
+	require_once get_template_directory() . '/inc/Redux/redux-options.php';
+}
 
 if ( class_exists( 'WooCommerce' ) ) {
 	require_once get_template_directory() . '/woocommerce/wc-functions.php';
 	require_once get_template_directory() . '/woocommerce/wc-functions-remove.php';
 }
-
-define( 'rmbt_PATH_THEME', get_template_directory() );
-define( 'rmbt_URL_THEME', esc_url( get_template_directory_uri() ) );
 
 function rmbt_impex_scripts() {
 
