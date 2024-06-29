@@ -7,29 +7,21 @@ class HorizontalMenu {
                       overflow:'overflow',
                       burger:'burger',
               }
-              
               visibleClass: 'rmbt-visible', // классы для показа элементов
               hiddenClass: 'rmbt-hidden', // классы для скрытия элементов
-
               iconDropClass: '.icon-drop', // определяет внешний вид иконки когда subMenu закрыто 
               iconDropClassOpen: '.icon-drop_open', // Класс который определяет внешний вид иконки когда subMenu открыто. iconDropClass НЕбудет удалён
-              
               iconOverflow: '.icon-overflow', // определяет внешний вид иконки overflow menu
               iconOverflowOpen: '.icon-overflow_open', // определяет внешний вид иконки overflow menu когда overflow menu открыто
-              
-              iconBurger: 'icon-drop', // определяет внешний вид иконки Burger menu
+              iconBurger: 'icon-drop', // определяет внешний вид иконки Burgerr menu
               iconBurgerOpen: 'icon-drop_open', // определяет внешний вид иконки Burgerr menu когда Burgerr menu открыто  iconBurger НЕбудет удалён
-
               breakPointBurger: 768,      // размер окна при котором происходит перестроения в burger меню из overflow меню
-              
               single: 'false', // допускает одновременное открытие нескольких меню т.е. открытие следующего меню не закрывает предидущее
-
               contAdditionalClasses: { // пользовательские классы определяющие внешний вид открытых пунктов меню или контейнеров
                   drop: [],
                   overflow: [],
                   burger: [],
               }, 
-
               animation = {     // для каждого вида меню ожидается объект содержащий все свойства/значения, которые вы хотите анимировать для открытия и закрытия отдельно!
                  drop:{
                      open{},
@@ -56,14 +48,14 @@ class HorizontalMenu {
     burger: 'burger-cont',
   };
 
-  // объект, модификаторы классов для того что бы каждый вид меню мог открываться - закрываться по своему
+  // объект, модификаторы классов для того что бы каждый вид меню мог открываться - закрываться посвоему
   modifiers = {
     drop: 'drop',
     overflow: 'overflow',
     burger: 'burger',
   };
 
-  // пользовательские классы определяющие внешний вид открытых пунктов меню или контейнеров
+  // пользаватеьские классы определяющие внешний вид открытых пунтков меню или контейнеров
   contAdditionalClasses = {
     drop: [],
     overflow: [],
@@ -134,7 +126,7 @@ class HorizontalMenu {
   constructor(param) {
     this.containersMenu = param.containersMenu || '.cont-horizont-menu';
     this.nl_containersMenu = this._getArrNodeLists(this.containersMenu);
-    if (this.nl_containersMenu.length === null)
+    if (this.nl_containersMenu.length == 0)
       throw new Error('Menus with given selectors  are absent on this page');
     this.contAdditionalClasses = param.contAdditionalClasses;
     this.iconOverflow = this._clearClassName(param.iconOverflow || 'icon-overflow');
@@ -152,8 +144,6 @@ class HorizontalMenu {
     this.hiddenClass = this._clearClassName(param.hiddenClass || 'rmbt-hidden');
     this.single = param.single || 'true';
 
-    this.initAnimation(param.animation)
-
     this.lastWidthWindow = window.innerWidth;
 
     this.forEachMenu();
@@ -162,44 +152,19 @@ class HorizontalMenu {
   }
 
   forEachMenu() {
-    this.nl_containersMenu.forEach(arrNodeList => {
+    for (let index = 0; index < this.nl_containersMenu.length; index++) {
+      const arrNodeList = this.nl_containersMenu[index];
+
       for (let i = 0; i <= arrNodeList.length - 1; i++) {
         let contCurrentMenu = arrNodeList[i];
         if (!contCurrentMenu.querySelector('nav')) continue;
-
         this.monitoringResize(contCurrentMenu);
-
         this.menuContainerDrop(contCurrentMenu);
         this.setSubMenuIcon(contCurrentMenu);
         this.setBurgerIcon(contCurrentMenu);
       }
-    });
-  }
-
-
-  initAnimation(animation) {
-
-    for (const prop in animation) {
-      if (animation.hasOwnProperty(prop) && animation[prop] !== null) {
-        const subProp = animation[prop];
-        for (const subProp in animation[prop]) {
-          if (animation[prop].hasOwnProperty(subProp) && animation[prop][subProp] !== null) {
-            // console.log(`Анимация ${prop} ${subProp} запущена!`);
-
-            this.animation[prop][subProp] = animation[prop][subProp];
-
-
-          }
-        }
-      }
     }
-
-    console.log("this.animation = ", this.animation);
   }
-
-
-
-
 
   clearNav(contCurrentMenu) {
     if (
@@ -359,7 +324,7 @@ class HorizontalMenu {
   }
 
   /* 
-          search sub menu and set sub menu icon if find
+          search sub menu and set sub menu icon if finde
       */
   setSubMenuIcon(contCurrentMenu) {
     const itemsMenu = contCurrentMenu.querySelectorAll(`nav li`);
@@ -409,7 +374,7 @@ class HorizontalMenu {
                 return;
               }
             }
-          } catch { }
+          } catch {}
         });
         break;
 
@@ -625,9 +590,15 @@ class HorizontalMenu {
         */
   _getArrNodeLists(date) {
     if (Array.isArray(date)) {
-      return date.map(el => document.querySelectorAll(el));
-    } else {
-      return [document.querySelectorAll(date)];
+      let nl_menus = date
+        .map(el => document.querySelectorAll(el))
+        .filter((menu, index, nodeList) => {
+          if (menu.length > 0) {
+            return menu;
+          }
+        });
+
+      return nl_menus;
     }
   }
 
@@ -659,32 +630,17 @@ class HorizontalMenu {
 }
 
 const param = {
-  containersMenu: ['.cont-horizont-menu', '.wrap-drop-menu', '#my-menu'],
+  containersMenu: ['.cont-horizont-menu'],
   contAdditionalClasses: {
     drop: [],
     overflow: [],
     burger: [],
   },
-  animation: {
-    drop: {
-      open: {
-      },
-      close: {
-      },
-    },
-    overflow: {
-      open: {
-      },
-      close: {
-      },
-    },
-    burger: {
-      open: {
-      },
-      close: {
-      },
-    },
-  },
+  // animation: {
+  //     drop: {},
+  //     overflow: {},
+  //     burger: {},
+  // }
 };
 
 const menu = new HorizontalMenu(param);
