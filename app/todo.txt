@@ -6,6 +6,30 @@
 
 ----------------------- T O D O  -----------------------   
    
+
+   разобраться и пременять Sticky Header
+      var lastScrollTop = 0;
+      $(window).scroll(function () {
+         var stickyNavTop = 10;
+         var stickyNav = function () {
+            var scrollTop = $(window).scrollTop();
+            if (scrollTop > stickyNavTop) {
+            $("header").addClass("sticky").addClass("scrolled");
+            } else {
+            $("header").removeClass("sticky").removeClass("scrolled");
+            }
+            if (scrollTop < lastScrollTop) {
+            $("header").removeClass("sticky");
+            }
+            lastScrollTop = scrollTop;
+         };
+         stickyNav();
+      });
+
+
+
+
+
    Добавить в v-2.1.0
 
       +  Модуль Динамический адаптив   https://youtu.be/QKuMr575vlQ
