@@ -74,14 +74,14 @@ function simple_rmbt_impex_content_width() {
 }
 add_action( 'after_setup_theme', 'simple_rmbt_impex_content_width', 0 );
 
-function rmbt_impex_register_required_plugins() {
+function rmbt_renoteck_register_required_plugins() {
 	$plugins = array(
 		array(
-			'name' => 'core plugin',
+			'name' => 'renoteck core',
 			// The plugin name.
-			'slug' => 'core-plugin',
+			'slug' => 'renoteck-core',
 			// The plugin slug (typically the folder name).
-			'source' => get_template_directory() . '/plugins/core-plugin.zip',
+			'source' => plugin_dir_path(__FILE__) . '/plugins/renoteck-core',
 			// The plugin source.
 			'required' => true,
 			// If false, the plugin is only 'recommended' instead of required.
@@ -128,7 +128,7 @@ function rmbt_impex_register_required_plugins() {
 
 	tgmpa( $plugins, $config );
 }
-add_action( 'tgmpa_register', 'rmbt_impex_register_required_plugins' );
+add_action( 'tgmpa_register', 'rmbt_renoteck_register_required_plugins' );
 
 function rmbt_widgets_init() {
 	register_sidebar(
