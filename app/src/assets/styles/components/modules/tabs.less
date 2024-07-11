@@ -3,27 +3,30 @@
     position: relative;
     z-index: 2;
 
-    .tab {
-      cursor: pointer;
-      border-bottom: none;
+    &__title {
+      // all: unset;
+      // cursor: pointer;
     }
   }
 
-  .tabs__content {
+  &__content {
     position: relative;
     top: -2px;
+  }
 
-    .tabs__body {
-      position: absolute;
-      top: 0;
-      left: 0;
-      padding: 20px 10px 20px 10px;
+  &__body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 10px 20px 10px;
 
-      display: none;
-    }
+    display: none;
+  }
 
-    .active {
-      display: block;
-    }
+  &__title-active {
+    border-bottom: 5px solid #0515fd;
+  }
+  &__body-active {
+    display: block;
   }
 }
