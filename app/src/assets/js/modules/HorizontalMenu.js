@@ -167,14 +167,19 @@ class HorizontalMenu {
   constructor(param) {
     this.containersMenu = param.containersMenu || '.cont-horizont-menu';
     this.nl_containersMenu = this._getArrNodeLists(this.containersMenu);
-    if (this.nl_containersMenu.length == 0) throw new Error('Menus with given selectors  are absent on this page');
+    if (this.nl_containersMenu.length == 0)
+      throw new Error('Menus with given selectors  are absent on this page');
     this.contAdditionalClasses = param.contAdditionalClasses;
     this.iconOverflow = this._clearClassName(param.iconOverflow || 'icon-overflow');
     this.iconBurger = this._clearClassName(param.iconBurger || 'icon-burger');
-    this.iconBurgerOpen = this._clearClassName(param.iconBurgerOpen || 'icon-burger_open');
+    this.iconBurgerOpen = this._clearClassName(
+      param.iconBurgerOpen || 'icon-burger_open'
+    );
     this.iconDropClass = this._clearClassName(param.iconDropClass || 'icon-drop');
-    this.iconDropClassOpen = this._clearClassName(param.iconDropdownmodifiereOpen || 'icon-drop_open');
-    this.breakPointBurger = param.breakPointBurger || 767;
+    this.iconDropClassOpen = this._clearClassName(
+      param.iconDropdownmodifiereOpen || 'icon-drop_open'
+    );
+    this.breakPointBurger = param.breakPointBurger || 769;
 
     this.visibleClass = this._clearClassName(param.visibleClass || 'rmbt-visible');
     this.hiddenClass = this._clearClassName(param.hiddenClass || 'rmbt-hidden');
@@ -203,7 +208,12 @@ class HorizontalMenu {
   }
 
   clearNav(contCurrentMenu) {
-    if (contCurrentMenu.querySelector('nav').classList.contains(this.hiddenClass) || contCurrentMenu.querySelector('nav').classList.contains(`${this.visibleClass}_${this.modifiers.burger}`)) {
+    if (
+      contCurrentMenu.querySelector('nav').classList.contains(this.hiddenClass) ||
+      contCurrentMenu
+        .querySelector('nav')
+        .classList.contains(`${this.visibleClass}_${this.modifiers.burger}`)
+    ) {
       contCurrentMenu.querySelector('nav').className = '';
       if (typeof gsap !== 'undefined') {
         Object.keys(this.animation.burger.close).forEach(prop => {
@@ -241,7 +251,8 @@ class HorizontalMenu {
         this.setAdditionalClassesToCont(overflowCont, 'overflow');
         contCurrentMenu.style.visibility = 'visible'; // показываю меню после окончательного формирования
       }
-      if (!contCurrentMenu.querySelector(this.iconOverflow)) this.setOverflowIcon(contCurrentMenu);
+      if (!contCurrentMenu.querySelector(this.iconOverflow))
+        this.setOverflowIcon(contCurrentMenu);
       return overflowCont;
     }
 
@@ -251,8 +262,12 @@ class HorizontalMenu {
 
   monitoringResize(contCurrentMenu) {
     const currentMenu = contCurrentMenu.querySelector('nav>ul:first-child');
-    const paddingRightCurrentMenu = +window.getComputedStyle(contCurrentMenu.querySelector('nav')).paddingRight.replace(/px/g, '');
-    const paddingRightcontCurrentMenu = +window.getComputedStyle(contCurrentMenu).paddingRight.replace(/px/g, '');
+    const paddingRightCurrentMenu = +window
+      .getComputedStyle(contCurrentMenu.querySelector('nav'))
+      .paddingRight.replace(/px/g, '');
+    const paddingRightcontCurrentMenu = +window
+      .getComputedStyle(contCurrentMenu)
+      .paddingRight.replace(/px/g, '');
     let prevRightCont = contCurrentMenu.getBoundingClientRect().right;
 
     const observer = new ResizeObserver(entries => {
@@ -261,8 +276,16 @@ class HorizontalMenu {
         return;
       }
 
-      if (contCurrentMenu.querySelector(`.${this.iconBurger}`).classList.contains(this.iconBurgerOpen)) {
-        this.changeStateIconMenu(contCurrentMenu.querySelector('nav'), this.modifiers.burger, 'close');
+      if (
+        contCurrentMenu
+          .querySelector(`.${this.iconBurger}`)
+          .classList.contains(this.iconBurgerOpen)
+      ) {
+        this.changeStateIconMenu(
+          contCurrentMenu.querySelector('nav'),
+          this.modifiers.burger,
+          'close'
+        );
       }
 
       this.clearNav(contCurrentMenu);
@@ -271,7 +294,8 @@ class HorizontalMenu {
       if (overflowCont === null) return;
       let widthPrevFirstOverflowLi = 0;
       let prevFirstOverflowLi = overflowCont.querySelector('li:first-child');
-      if (prevFirstOverflowLi) widthPrevFirstOverflowLi = prevFirstOverflowLi.getBoundingClientRect().width;
+      if (prevFirstOverflowLi)
+        widthPrevFirstOverflowLi = prevFirstOverflowLi.getBoundingClientRect().width;
 
       const mainUl = contCurrentMenu.querySelector('nav ul');
       const currentRightMainUl = mainUl.getBoundingClientRect().right;
@@ -283,8 +307,12 @@ class HorizontalMenu {
         prevRightlastLi = prevlastLi.getBoundingClientRect().right;
       }
 
-      const sumDistanceBetweenLi = [...contCurrentMenu.querySelectorAll('nav>ul:first-child>li')].reduce((accum, li, i, arr) => {
-        if (arr[i + 1]) accum += arr[i + 1].getBoundingClientRect().left - li.getBoundingClientRect().right;
+      const sumDistanceBetweenLi = [
+        ...contCurrentMenu.querySelectorAll('nav>ul:first-child>li'),
+      ].reduce((accum, li, i, arr) => {
+        if (arr[i + 1])
+          accum +=
+            arr[i + 1].getBoundingClientRect().left - li.getBoundingClientRect().right;
         return accum;
       }, 0);
 
@@ -293,10 +321,17 @@ class HorizontalMenu {
         if (prevRightlastLi > currentRightMainUl) overflowCont.prepend(prevlastLi);
       } else {
         // окно увеличивается
-        if (sumDistanceBetweenLi - widthPrevFirstOverflowLi > (paddingRightCurrentMenu + paddingRightcontCurrentMenu) * 2) {
+        if (
+          sumDistanceBetweenLi - widthPrevFirstOverflowLi >
+          (paddingRightCurrentMenu + paddingRightcontCurrentMenu) * 2
+        ) {
           if (prevFirstOverflowLi) currentMenu.append(prevFirstOverflowLi);
-          if (contCurrentMenu.querySelectorAll(`.${this.hiddenMenuCont.overflow}>li`).length == 0) {
-            if (contCurrentMenu.querySelector('.icon-overflow')) contCurrentMenu.querySelector('.icon-overflow').remove();
+          if (
+            contCurrentMenu.querySelectorAll(`.${this.hiddenMenuCont.overflow}>li`)
+              .length == 0
+          ) {
+            if (contCurrentMenu.querySelector('.icon-overflow'))
+              contCurrentMenu.querySelector('.icon-overflow').remove();
           }
         }
       }
@@ -413,9 +448,13 @@ class HorizontalMenu {
     let modifier;
     if (currentMenu.classList.contains(this.visibleClass + '_' + this.modifiers.drop)) {
       modifier = this.modifiers.drop;
-    } else if (currentMenu.classList.contains(this.visibleClass + '_' + this.modifiers.burger)) {
+    } else if (
+      currentMenu.classList.contains(this.visibleClass + '_' + this.modifiers.burger)
+    ) {
       modifier = this.modifiers.burger;
-    } else if (currentMenu.classList.contains(this.visibleClass + '_' + this.modifiers.overflow)) {
+    } else if (
+      currentMenu.classList.contains(this.visibleClass + '_' + this.modifiers.overflow)
+    ) {
       modifier = this.modifiers.overflow;
     }
 
@@ -457,10 +496,14 @@ class HorizontalMenu {
       document.querySelector('html').classList.add('rmbt-lock');
       let overflowCont = currentMenu.querySelector(`.${this.hiddenMenuCont.overflow}`);
       if (overflowCont) {
-        if (currentMenu.querySelectorAll(`.${this.hiddenMenuCont.overflow}>li`).length > 0) {
-          currentMenu.querySelectorAll(`.${this.hiddenMenuCont.overflow}>li`).forEach(li => {
-            currentMenu.querySelector('nav>ul:first-child').append(li);
-          });
+        if (
+          currentMenu.querySelectorAll(`.${this.hiddenMenuCont.overflow}>li`).length > 0
+        ) {
+          currentMenu
+            .querySelectorAll(`.${this.hiddenMenuCont.overflow}>li`)
+            .forEach(li => {
+              currentMenu.querySelector('nav>ul:first-child').append(li);
+            });
         }
       }
     }
@@ -503,13 +546,22 @@ class HorizontalMenu {
         let currentMenu = parentMenu.querySelector(`.${this.hiddenMenuCont.drop}`);
         this.closeMenu(currentMenu);
       } else if (target.classList.contains(this.iconBurgerOpen)) {
-        let currentMenu = target.closest(`.${this.visibleClass}_${this.modifiers.burger}`);
+        let currentMenu = target.closest(
+          `.${this.visibleClass}_${this.modifiers.burger}`
+        );
         this.closeMenu(currentMenu);
       } else if (target.classList.contains(this.iconDropClass)) {
-        let currentMenu = target.closest('li').querySelector(`.${this.hiddenMenuCont.drop}`);
+        let currentMenu = target
+          .closest('li')
+          .querySelector(`.${this.hiddenMenuCont.drop}`);
         this.OpenMenu(currentMenu, this.modifiers.drop);
-      } else if (target.classList.contains(this.iconOverflow) || target.closest(`.${this.iconOverflow}`)) {
-        let currentMenu = target.closest('nav').querySelector(`.${this.hiddenMenuCont.overflow}`);
+      } else if (
+        target.classList.contains(this.iconOverflow) ||
+        target.closest(`.${this.iconOverflow}`)
+      ) {
+        let currentMenu = target
+          .closest('nav')
+          .querySelector(`.${this.hiddenMenuCont.overflow}`);
         this.OpenMenu(currentMenu, this.modifiers.overflow);
       } else if (target.classList.contains(this.iconBurger)) {
         this.containersMenu.forEach(menuSel => {
@@ -609,7 +661,9 @@ class HorizontalMenu {
 
   _getAllOpenMenus() {
     let entries = Object.entries(this.modifiers);
-    let arr_menu = entries.map(([key, mod]) => [...document.querySelectorAll(`.${this.visibleClass}_${mod}`)]);
+    let arr_menu = entries.map(([key, mod]) => [
+      ...document.querySelectorAll(`.${this.visibleClass}_${mod}`),
+    ]);
     arr_menu = arr_menu.flat();
 
     return arr_menu;
