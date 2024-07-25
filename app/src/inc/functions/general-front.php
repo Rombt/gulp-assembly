@@ -386,14 +386,16 @@ function rmbt_redux_img($id_field_pic, $alt = "", $id_svg = '')
 	}
 }
 
-function rmbt_get_redux_field($id_field, $kses = false)
+function rmbt_get_redux_field($id_field, $kses = false, $all_tags_allowed=false)
 {
-	global $rmbt_impex_options;
+	global $rmbt_renoteck_options;
 
 	if ($kses) {
-		return class_exists('ReduxFramework') ? __(wp_kses($rmbt_impex_options[$id_field], 'post'), 'rmbt_impex') : "";
+		return class_exists('ReduxFramework') ? wp_kses($rmbt_renoteck_options[$id_field], 'post') : "";
+	}elseif ($all_tags_allowed) {
+		return class_exists('ReduxFramework') ? $rmbt_renoteck_options[$id_field] : "";
 	}
-	return class_exists('ReduxFramework') ? esc_html__($rmbt_impex_options[$id_field], 'rmbt_impex') : "";
+	return class_exists('ReduxFramework') ? esc_html__($rmbt_renoteck_options[$id_field]) : "";
 }
 
 function rmbt_phone_number_clear_redux($phone_number)
