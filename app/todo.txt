@@ -23,7 +23,7 @@
                main-style.less
                redux-options.php
                app.js
-
+            открывать файлы компонента в отдельном окне VS Code
 
 
    
