@@ -390,6 +390,8 @@ function rmbt_get_redux_field($id_field, $kses = false, $all_tags_allowed=false)
 {
 	global $rmbt_renoteck_options;
 
+		if (!array_key_exists($id_field,$rmbt_renoteck_options)) return "";
+
 	if ($kses) {
 		return class_exists('ReduxFramework') ? wp_kses($rmbt_renoteck_options[$id_field], 'post') : "";
 	}elseif ($all_tags_allowed) {
