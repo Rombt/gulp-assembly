@@ -352,29 +352,40 @@ function rmbt_redux_get_url($id_field, $custom_default_url = '')
  * 		Redux
  * 		url default picture in Redux's field
  * 		
+ * 
+ *  DON`T WORKING !!!!
  */
-function rmbt_redux_get_pic_url($id_field_pic, $custom_default_url = '')
-{
-	global $rmbt_impex_options;
+// function rmbt_redux_get_pic_url($id_field_pic, $custom_default_url = '')
+// {
+// 	global $rmbt_impex_options;
 
-	if (!class_exists('Redux') || !isset($rmbt_impex_options[$id_field_pic]['url']) || $rmbt_impex_options[$id_field_pic]['url'] === '') {
-		return esc_url($custom_default_url !== '' ? $custom_default_url : false);
-	}
+// 	if (!class_exists('Redux') || !isset($rmbt_impex_options[$id_field_pic]['url']) || $rmbt_impex_options[$id_field_pic]['url'] === '') {
+// 		return esc_url($custom_default_url !== '' ? $custom_default_url : false);
+// 	}
 
-	if (isset($rmbt_impex_options[$id_field_pic]['url'])) {
-		if (stripos($rmbt_impex_options[$id_field_pic]['url'], get_site_url()) === 0) {
-			return $rmbt_impex_options[$id_field_pic]['url'];
-		} else {
-			$clear_url = str_replace($_SERVER['SERVER_NAME'] . '/', '', $rmbt_impex_options[$id_field_pic]['url']);
-			return esc_url(get_template_directory_uri() . $clear_url);
-		}
-	}
-}
+// 	if (isset($rmbt_impex_options[$id_field_pic]['url'])) {
+
+
+
+// 		if (stripos($rmbt_impex_options[$id_field_pic]['url'], get_site_url()) === 0) {
+
+// 			return $rmbt_impex_options[$id_field_pic]['url'];
+// 		} else {
+// 			$clear_url = str_replace($_SERVER['SERVER_NAME'] . '/', '', $rmbt_impex_options[$id_field_pic]['url']);
+
+// 			return esc_url(get_template_directory_uri() . $clear_url);
+// 		}
+// 	}
+// }
 
 function rmbt_redux_img($id_field_pic, $alt = "", $id_svg = '')
 {
-	if (rmbt_redux_get_pic_url($id_field_pic)) {
-		return '<img src="' . rmbt_redux_get_pic_url($id_field_pic) . '" alt="' . $alt . '">';
+	global $rmbt_impex_options;
+
+
+
+	if ($rmbt_impex_options[$id_field_pic]['url']) {
+		return '<img src="' . $rmbt_impex_options[$id_field_pic]['url'] . '" alt="' . $alt . '">';
 	} else {
 		if ($id_svg == '') {
 			return;
