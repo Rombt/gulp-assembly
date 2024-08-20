@@ -8,8 +8,8 @@
 
    dynamic-components
       компонент это какая либо изолированная часть  страницы 
-      представляет собой папку в которой:
-         index.php
+      представляет собой папку с именем component_name в которой:
+         component_name.php
          some-files.php
          styles.less/sass
          scripts.js

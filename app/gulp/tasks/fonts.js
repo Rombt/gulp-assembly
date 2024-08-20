@@ -62,9 +62,9 @@ export const ttfToWoff = () => {
 };
 
 export const fontStyle = done => {
-  let arrfontsFiles = app.path.styles.src.map(
-    el => el.replace(/\/([^/]+\.[a-z]+)$/i, '') + `/fonts.${app.isSASS ? 'sass' : 'less'}`
-  );
+  let arrfontsFiles = app.path.styles.src.map(el => {
+    el.replace(/\/([^/]+\.[a-z]+)$/i, '') + `/fonts.${app.isSASS ? 'sass' : 'less'}`;
+  });
 
   arrfontsFiles.map((styleFile, index) => {
     app.plugins.fs.readdir(app.path.fonts.src[index], function (err, fontsFiles) {
@@ -122,7 +122,7 @@ export const fontStyle = done => {
 
   return done();
 
-  function cd() { }
+  function cd() {}
 };
 
 export const copyFonts = () => {
