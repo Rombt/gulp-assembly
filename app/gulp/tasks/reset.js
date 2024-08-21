@@ -10,9 +10,5 @@ export const reset = done => {
     console.log('ERROR: array clearPath does not exist!!!');
     return done();
   }
-
-  console.log('app.path.clear.src = ', app.path.clear.src);
-  console.log('app.path.prod = ', app.path.prod);
-
   return app.plugins.del(app.path.clear.src, { force: true });
 };
