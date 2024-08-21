@@ -250,6 +250,8 @@ export const path = {
         html: [`${this.prod.html}/**/*.*`, `!${this.prod.html}/.gitkeep`],
         php: [
           `${this.prod.php}/**/*.*`,
+          `${this.prod.php}/**/`,
+          `!${this.prod.php}/app/**/`,
           `!${this.prod.php}/app/**/*.*`,
           `!${this.prod.php}/.git/**/*.*`,
           `!${this.prod.php}/.gitignore/**/*.*`,
