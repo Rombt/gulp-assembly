@@ -13,6 +13,10 @@
 
 	<div class="test-1"></div>
 
+
+
+
+	<script src='./assets/js/app.main.min.js'></script>
 </body>
 
 </html>

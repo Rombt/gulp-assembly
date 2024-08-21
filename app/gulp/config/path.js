@@ -57,7 +57,7 @@ export const path = {
         `${this.src.php}/${this.srcPluginName}/assets/img/**/*.{jpg,jpeg,png,gif,webp,svg,ico}`,
       ],
       js: [
-        `${this.src.php}/assets/js/**/*.js`,
+        `${this.src.php}/**/*.js`,
         `${this.src.php}/${this.srcPluginName}/assets/js/**/*.js`,
         `${this.src.php}/${this.srcPluginName}/inc/gutenberg/blocks/**/*.js`,
       ],
@@ -191,7 +191,7 @@ export const path = {
     const path = {
       src: {
         html: [`${this.src.php}/assets/js/app.js`],
-        php: [`${this.src.php}/assets/js/app.js`],
+        php: [`${this.src.php}/assets/js/app.js`, `${this.src.php}/template-parts/`],
         plug: [`${this.src.plug}/assets/js/admin.js`],
       },
       prod: {

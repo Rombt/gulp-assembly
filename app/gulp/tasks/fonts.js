@@ -1,17 +1,5 @@
 /**
- * This task creating fonts in woff and woff2 formats and generates styles file with font inclusion whith needs to be inclusion in main styles file.
- * Fonts file can be created for less or sass preprocessor. It is created once! For re-creation you must delete existing file fonts.*
- * Creating fonts takes too much time, so we generate fonts only once. Subsequently, we only copy them.
- *
- *  Source files:
- *      app.path.fonts.src
- *      the styles file name of fonts is generated based on app.path.styles.src
- *
- * !! Destination paths:
- *      - For creation: The same folder as the source
- *      - For copying:
- *          app.path.prod.fontHtml
- *          -- wp app.path.prod.fontPhp
+
  */
 
 import ttf2woff2 from 'gulp-ttf2woff2';
@@ -62,16 +50,33 @@ export const ttfToWoff = () => {
 };
 
 export const fontStyle = done => {
-  let arrfontsFiles = app.path.styles.src.map(el => {
-    el.replace(/\/([^/]+\.[a-z]+)$/i, '') + `/fonts.${app.isSASS ? 'sass' : 'less'}`;
+  let arrPathFontFiles = [];
+  let pluginPath = [];
+
+  arrPathFontFiles.push(app.plugins.nodePath.parse(app.path.styles.src[0]).dir);
+
+  pluginPath = app.path.styles.src.filter(el => {
+    if (el.indexOf(`${app.path.srcPluginName}`) >= 0) {
+      return el;
+    }
+  });
+  if (pluginPath.length > 0) {
+    arrPathFontFiles.push(app.plugins.nodePath.parse(pluginPath[0]).dir);
+  }
+
+  arrPathFontFiles.forEach((path, index) => {
+    arrPathFontFiles[index] += '/fonts.less';
   });
 
-  arrfontsFiles.map((styleFile, index) => {
+  arrPathFontFiles.map((pathFontFile, index) => {
     app.plugins.fs.readdir(app.path.fonts.src[index], function (err, fontsFiles) {
-      if (styleFile) {
-        // if (!app.plugins.fs.existsSync(styleFile)) {     // неудобно и не нужно т.к. генерация шрифтов запускается только вручную!
-        app.plugins.fs.writeFile(styleFile, '', cd);
+      if (pathFontFile) {
+        console.log('**pathFontFile = ', pathFontFile);
+        app.plugins.fs.writeFile(pathFontFile, '', cd);
         let newFileOnly;
+        if (fontsFiles === undefined || fontsFiles.length === 0) {
+          return;
+        }
         for (var i = 0; i < fontsFiles.length; i++) {
           let fontFileName = fontsFiles[i].split('.')[0];
           if (newFileOnly !== fontFileName) {
@@ -104,7 +109,7 @@ export const fontStyle = done => {
               fontWeight = 400;
             }
             app.plugins.fs.appendFile(
-              styleFile,
+              pathFontFile,
               `@font-face {
                         font-family: "${fontName}";
                         font-display: swap;
@@ -115,7 +120,6 @@ export const fontStyle = done => {
             newFileOnly = fontFileName;
           }
         }
-        // неудобно!
       }
     });
   });

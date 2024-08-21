@@ -167,8 +167,10 @@ class HorizontalMenu {
   constructor(param) {
     this.containersMenu = param.containersMenu || '.cont-horizont-menu';
     this.nl_containersMenu = this._getArrNodeLists(this.containersMenu);
-    if (this.nl_containersMenu.length == 0)
-      throw new Error('Menus with given selectors  are absent on this page');
+    if (this.nl_containersMenu.length == 0) {
+      // throw new Error('Menus with given selectors  are absent on this page');
+      return;
+    }
     this.contAdditionalClasses = param.contAdditionalClasses;
     this.iconOverflow = this._clearClassName(param.iconOverflow || 'icon-overflow');
     this.iconBurger = this._clearClassName(param.iconBurger || 'icon-burger');
