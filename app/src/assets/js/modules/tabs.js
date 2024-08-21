@@ -1,4 +1,4 @@
-const tabs = document.querySelectorAll('.tabs');
+const tabs = document.querySelectorAll('.tabs__title');
 
 if (tabs) {
   tabs.forEach(tab => {

@@ -6,7 +6,7 @@
     нужен для организации вертикальных отношений между основными блоками
 */
 .rmbt-page-wrap {
-  max-width: @width_main-wrapper;
+  max-width: @width_main_wrapper;
   min-height: 100vh;
   margin: 0px auto;
   position: relative;
@@ -30,7 +30,7 @@ main {
 
 /*центрующий контейнер фоновой ширины*/
 .rmbt-full-width {
-  max-width: @width_main-wrapper;
+  max-width: @width_main_wrapper;
   .wrapper-full();
   margin: 0 auto;
 }
@@ -159,4 +159,29 @@ main {
 
 body.rmbt-lock {
   overflow: hidden;
+}
+
+.svg-footer-icons {
+  box-sizing: border-box;
+  color: #000;
+  // background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  outline: 2px solid #fff;
+  outline-offset: -2px;
+  .adaptive-prop(width, 62, 42);
+  .adaptive-prop(height, 62, 42);
+  flex-shrink: 0;
+}
+.svg-header-icons {
+  box-sizing: border-box;
+  color: #a41c35;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid #a41c35;
+  outline: 2px solid #a41c35;
+  outline-offset: -2px;
+  .adaptive-prop(width, 62, 42);
+  .adaptive-prop(height, 62, 42);
+  flex-shrink: 0;
 }

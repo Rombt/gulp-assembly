@@ -1,10 +1,7 @@
 import webpackStream from 'webpack-stream';
 
 export const js = () => {
-  console.log('app.path.js.src = ', app.path.js.src);
   const arrPathFilesJS = getJsEntries(app.path.js.src);
-
-  console.log('arrPathFilesJS  = ', arrPathFilesJS);
 
   return app.gulp
     .src(arrPathFilesJS, { sourcemaps: app.isDev, allowEmpty: true })

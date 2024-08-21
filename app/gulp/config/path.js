@@ -47,8 +47,8 @@ export const path = {
   get watch() {
     return {
       styles: [
-        `${this.src.php}/assets/styles/**/*.less`,
-        `${this.src.php}/assets/styles/**/*.scss`,
+        `${this.src.php}/**/*.less`,
+        `${this.src.php}/**/*.scss`,
         `${this.src.php}/${this.srcPluginName}/assets/styles/**/*.less`,
         `${this.src.php}/${this.srcPluginName}/inc/gutenberg/blocks/**/*.css`,
       ],
@@ -57,7 +57,7 @@ export const path = {
         `${this.src.php}/${this.srcPluginName}/assets/img/**/*.{jpg,jpeg,png,gif,webp,svg,ico}`,
       ],
       js: [
-        `${this.src.php}/assets/js/**/*.js`,
+        `${this.src.php}/**/*.js`,
         `${this.src.php}/${this.srcPluginName}/assets/js/**/*.js`,
         `${this.src.php}/${this.srcPluginName}/inc/gutenberg/blocks/**/*.js`,
       ],
@@ -108,10 +108,20 @@ export const path = {
     const path = {
       src: {
         html: [
-          `${this.src.php}/assets/styles/main-style${app.isSASS ? '.sass' : '.less'}`, //! null element of array will use for generate styles file of fonts
+          `${this.src.php}/assets/styles/main-style${app.isSASS ? '.sass' : '.less'}`, //! main-style must be null element of array! And it will use for generate styles file of fonts
+          `${this.src.php}/assets/styles/components/**/*${
+            app.isSASS ? '.sass' : '.less'
+          }`,
+          `${this.src.php}/assets/styles/parts/**/*${app.isSASS ? '.sass' : '.less'}`,
+          `${this.src.php}/html/template-parts/**/*${app.isSASS ? '.sass' : '.less'}`,
         ],
         php: [
           `${this.src.php}/assets/styles/main-style${app.isSASS ? '.sass' : '.less'}`,
+          `${this.src.php}/assets/styles/components/**/*${
+            app.isSASS ? '.sass' : '.less'
+          }`,
+          `${this.src.php}/assets/styles/parts/**/*${app.isSASS ? '.sass' : '.less'}`,
+          `${this.src.php}/template-parts/**/*${app.isSASS ? '.sass' : '.less'}`,
         ],
         plug: [
           `${this.src.plug}/assets/styles/main-style${app.isSASS ? '.sass' : '.less'}`,
@@ -181,7 +191,7 @@ export const path = {
     const path = {
       src: {
         html: [`${this.src.php}/assets/js/app.js`],
-        php: [`${this.src.php}/assets/js/app.js`, `${this.src.php}/template-parts`],
+        php: [`${this.src.php}/assets/js/app.js`, `${this.src.php}/template-parts/`],
         plug: [`${this.src.plug}/assets/js/admin.js`],
       },
       prod: {

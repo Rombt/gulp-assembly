@@ -1,14 +1,14 @@
 <?php
 
-defined('ABSPATH') || exit;
+defined( 'ABSPATH' ) || exit;
 
-if (!class_exists('Redux')) {
+if ( ! class_exists( 'Redux' ) ) {
 	return;
 }
 
 // $opt_name = 'restaurant_site_options';
-$opt_name = 'rmbt_pc_options';
-$dir = dirname(__FILE__) . DIRECTORY_SEPARATOR;
+$opt_name = 'rmbt_renoteck_options';
+$dir = dirname( __FILE__ ) . DIRECTORY_SEPARATOR;
 $sample_patterns = array();
 
 /*
@@ -19,17 +19,17 @@ $theme = wp_get_theme();
 
 $args = array(
 	'opt_name' => $opt_name,
-	'display_name' => $theme->get('Name'),
-	'display_version' => $theme->get('Version'),
+	'display_name' => $theme->get( 'Name' ),
+	'display_version' => $theme->get( 'Version' ),
 
 	// Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only).
 	'menu_type' => 'submenu',
 	// Show the sections below the admin menu item or not.
 	'allow_sub_menu' => false,
 	// The text to appear in the admin menu.
-	'menu_title' => esc_html__('Опции темы', 'rmbt_pc'),
+	'menu_title' => esc_html__( 'Опции темы', 'rmbt_pc' ),
 	// The text to appear on the page title.
-	'page_title' => esc_html__('Опции темы', 'rmbt_pc'),
+	'page_title' => esc_html__( 'Опции темы', 'rmbt_pc' ),
 	// Disable to create your own Google fonts loader.
 	'disable_google_fonts_link' => false,
 	// Show the panel pages on the admin bar.
@@ -128,7 +128,7 @@ $args = array(
 
 
 
-Redux::set_args($opt_name, $args);
+Redux::set_args( $opt_name, $args );
 
 /*
  * <--- END HELP TABS
@@ -140,9 +140,31 @@ Redux::set_args($opt_name, $args);
  * ---> START SECTIONS
  */
 
+require_once dirname( __FILE__ ) . '/sections/header.php';
+require_once dirname( __FILE__ ) . '/sections/hero_block.php';
+require_once dirname( __FILE__ ) . '/sections/about_us_page.php';
+require_once dirname( __FILE__ ) . '/sections/our_services.php';
+require_once dirname( __FILE__ ) . '/sections/our_projects.php';
+
+require_once dirname( __FILE__ ) . '/sections/social_networks.php';
+require_once dirname( __FILE__ ) . '/sections/contacts.php';
+require_once dirname( __FILE__ ) . '/sections/call-to-action-block.php';
+require_once dirname( __FILE__ ) . '/sections/financing-block.php';
+require_once dirname( __FILE__ ) . '/sections/testimonials-block.php';
+require_once dirname( __FILE__ ) . '/sections/we_do_block.php';
+require_once dirname( __FILE__ ) . '/sections/service-areas-block.php';
+require_once dirname( __FILE__ ) . '/sections/finansing-about-block.php';
+require_once dirname( __FILE__ ) . '/sections/about_us_hero_block.php';
+require_once dirname( __FILE__ ) . '/sections/our-approach-block.php';
+require_once dirname( __FILE__ ) . '/sections/how-did-we-get-here-block.php';
+require_once dirname( __FILE__ ) . '/sections/our_team_block.php';
+require_once dirname( __FILE__ ) . '/sections/how-does-our-referral-block.php';
+require_once dirname( __FILE__ ) . '/sections/amazing-reward-levels-block.php';
+require_once dirname( __FILE__ ) . '/sections/capture_form-referral.php';
+
+
+
 // require_once dirname(__FILE__) . '/sections/front_page.php';
-// require_once dirname(__FILE__) . '/sections/contacts.php';
-// require_once dirname(__FILE__) . '/sections/social_networks.php';
 // require_once dirname(__FILE__) . '/sections/equipment-categories.php';
 // require_once dirname(__FILE__) . '/sections/equipment_categories_group.php';
 // require_once dirname(__FILE__) . '/sections/archive-bakery.php';
@@ -153,12 +175,10 @@ Redux::set_args($opt_name, $args);
 
 // require_once dirname(__FILE__) . '/sections/menu_page.php';
 // require_once dirname(__FILE__) . '/sections/blog_page.php';
-// require_once dirname(__FILE__) . '/sections/about_us_page.php';
 // require_once dirname(__FILE__) . '/sections/search_page.php';
 // require_once dirname(__FILE__) . '/sections/404_page.php';
 
 
-// require_once dirname(__FILE__) . '/sections/header.php';
 // require_once dirname(__FILE__) . '/sections/footer.php';
 // require_once dirname(__FILE__) . '/sections/copyright.php';
 // require_once dirname(__FILE__) . '/sections/phone_numbers.php';

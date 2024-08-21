@@ -1,3 +1,35 @@
+/* 
+    Обеспечивает основной функционал горизонтального меню для всех меню на странице
+        базовые стили в файле horizontalMenu.less
+
+        этим классом обрабатываются ТОЛЬКО теги nav с классами указанными в param.containersMenu
+        при переполнении контейнера пункты меню которые не поместились скрываются в меню overflow
+
+        click, нажатия клавиши esc прослушиваются на всей странице 
+
+        по умолчанию выпадающие меню всех типов изначально создаются с внешним видом открытого состояния 
+            и скрываются классом rmbt-hidden 
+            для отрытия-активации меню класс rmbt-hidden удаляется 
+        такое повидение можно изменить:
+            при открытии-активации меню любого типа ему добавляется класс rmbt-visible с соответствующим модификатором
+            это даёт возможность организовать разные способы открытия для разных пипо меню
+
+
+
+    todo:
+
+        исключить возможность открытия меню за пределы окна 
+
+        добавить возможность устанавливать для каждого меню свой набор иконок, селекторами элементов которые уже прописаны в html
+
+        добавить все те манипуляции из dropprocessingClick() блокировка body и прочее
+        
+        возможность отключать icon - dropdown для меню desk top независимо от мобильной версии из html
+        overflow-cont  додлжен выезжать из за правой границы окна
+
+
+    */
+
 class HorizontalMenu {
   /*
           const param = {
@@ -13,16 +45,20 @@ class HorizontalMenu {
               iconDropClassOpen: '.icon-drop_open', // Класс который определяет внешний вид иконки когда subMenu открыто. iconDropClass НЕбудет удалён
               iconOverflow: '.icon-overflow', // определяет внешний вид иконки overflow menu
               iconOverflowOpen: '.icon-overflow_open', // определяет внешний вид иконки overflow menu когда overflow menu открыто
+              
               iconBurger: 'icon-drop', // определяет внешний вид иконки Burgerr menu
               iconBurgerOpen: 'icon-drop_open', // определяет внешний вид иконки Burgerr menu когда Burgerr menu открыто  iconBurger НЕбудет удалён
               breakPointBurger: 768,      // размер окна при котором происходит перестроения в burger меню из overflow меню
-              single: 'false', // допускает одновременное открытие нескольких меню т.е. открытие следующего меню не закрывает предидущее
-              contAdditionalClasses: { // пользовательские классы определяющие внешний вид открытых пунктов меню или контейнеров
+              
+              // single: 'false', // допускает одновременное открытие нескольких меню т.е. открытие следующего меню не закрывает предидущее
+
+              contAdditionalClasses: { // пользаватеьские классы определяющие внешний вид открытых пунтков меню или контейнеров
                   drop: [],
                   overflow: [],
                   burger: [],
               }, 
               animation = {     // для каждого вида меню ожидается объект содержащий все свойства/значения, которые вы хотите анимировать для открытия и закрытия отдельно!
+                              // соответствующий объект будет использован в методе gsap.to(). 
                  drop:{
                      open{},
                      close{}
@@ -41,7 +77,7 @@ class HorizontalMenu {
 
       */
 
-  // классы скрытых пунктов меню или контейнеров
+  // классы скрытых пунтков меню или контейнеров
   hiddenMenuCont = {
     overflow: 'overflow-cont',
     drop: 'drop-cont',
@@ -126,8 +162,10 @@ class HorizontalMenu {
   constructor(param) {
     this.containersMenu = param.containersMenu || '.cont-horizont-menu';
     this.nl_containersMenu = this._getArrNodeLists(this.containersMenu);
-    if (this.nl_containersMenu.length == 0)
-      throw new Error('Menus with given selectors  are absent on this page');
+    if (this.nl_containersMenu.length == 0) {
+      // throw new Error('Menus with given selectors  are absent on this page');
+      return;
+    }
     this.contAdditionalClasses = param.contAdditionalClasses;
     this.iconOverflow = this._clearClassName(param.iconOverflow || 'icon-overflow');
     this.iconBurger = this._clearClassName(param.iconBurger || 'icon-burger');
@@ -138,7 +176,7 @@ class HorizontalMenu {
     this.iconDropClassOpen = this._clearClassName(
       param.iconDropdownmodifiereOpen || 'icon-drop_open'
     );
-    this.breakPointBurger = param.breakPointBurger || 767;
+    this.breakPointBurger = param.breakPointBurger || 769;
 
     this.visibleClass = this._clearClassName(param.visibleClass || 'rmbt-visible');
     this.hiddenClass = this._clearClassName(param.hiddenClass || 'rmbt-hidden');
@@ -632,9 +670,9 @@ class HorizontalMenu {
 const param = {
   containersMenu: ['.cont-horizont-menu'],
   contAdditionalClasses: {
-    drop: [],
-    overflow: [],
-    burger: [],
+    drop: ['add-drop-1', 'add-drop-2', 'add-drop-3'],
+    overflow: ['add-overflow-1', 'add-overflow-2', 'add-overflow-3'],
+    burger: ['add-burger-1', 'add-burger-2', 'add-burger-3'],
   },
   // animation: {
   //     drop: {},

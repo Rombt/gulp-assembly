@@ -2,17 +2,21 @@
 <html lang="en">
 
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link href="./assets/styles/main-style.min.css" rel="stylesheet" type="text/css">
-   <title>Document</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="./assets/styles/main-style.min.css" rel="stylesheet" type="text/css">
+	<title>Document</title>
 </head>
 
 <body>
 
+	<div class="test-1"></div>
 
-   <script src='./assets/js/app.main.min.js'></script>
+
+
+
+	<script src='./assets/js/app.main.min.js'></script>
 </body>
 
 </html>
