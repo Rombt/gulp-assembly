@@ -1,20 +1,22 @@
 <?php
 
 
-require_once get_template_directory() . '/inc/functions/class-tgm-plugin-activation.php';
-require_once get_template_directory() . '/inc/Redux/redux-options.php';
-require_once get_template_directory() . '/inc/functions/general-front.php';
+define( 'rmbt_PATH_THEME', get_template_directory() );
+define( 'rmbt_URL_THEME', esc_url( get_template_directory_uri() ) );
 
+require_once get_template_directory() . '/inc/functions/class-tgm-plugin-activation.php';
+require_once get_template_directory() . '/inc/functions/general-front.php';
 // require_once get_template_directory() . '/inc/functions/comment_default.php';
 // require_once get_template_directory() . '/inc/functions/ajax.php';
+
+if ( class_exists( 'ReduxFramework' ) ) {
+	require_once get_template_directory() . '/inc/Redux/redux-options.php';
+}
 
 if ( class_exists( 'WooCommerce' ) ) {
 	require_once get_template_directory() . '/woocommerce/wc-functions.php';
 	require_once get_template_directory() . '/woocommerce/wc-functions-remove.php';
 }
-
-define( 'rmbt_PATH_THEME', get_template_directory() );
-define( 'rmbt_URL_THEME', esc_url( get_template_directory_uri() ) );
 
 function rmbt_impex_scripts() {
 
@@ -72,14 +74,14 @@ function simple_rmbt_impex_content_width() {
 }
 add_action( 'after_setup_theme', 'simple_rmbt_impex_content_width', 0 );
 
-function rmbt_impex_register_required_plugins() {
+function rmbt_renoteck_register_required_plugins() {
 	$plugins = array(
 		array(
-			'name' => 'core plugin',
+			'name' => 'renoteck core',
 			// The plugin name.
-			'slug' => 'core-plugin',
+			'slug' => 'renoteck-core',
 			// The plugin slug (typically the folder name).
-			'source' => get_template_directory() . '/plugins/core-plugin.zip',
+			'source' => plugin_dir_path(__FILE__) . '/plugins/renoteck-core',
 			// The plugin source.
 			'required' => true,
 			// If false, the plugin is only 'recommended' instead of required.
@@ -126,7 +128,7 @@ function rmbt_impex_register_required_plugins() {
 
 	tgmpa( $plugins, $config );
 }
-add_action( 'tgmpa_register', 'rmbt_impex_register_required_plugins' );
+add_action( 'tgmpa_register', 'rmbt_renoteck_register_required_plugins' );
 
 function rmbt_widgets_init() {
 	register_sidebar(

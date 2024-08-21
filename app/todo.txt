@@ -5,12 +5,41 @@
 
 
 ----------------------- T O D O  -----------------------   
+
+   в премиум темах есть как это сделать
+      Contact Form 7 integration  как это сделать 
+      MailChimp Integration (With CF7)
    
+   Нужны компоненты!!
+      должна быть возможность их быстрого копирования и кастомизации и подключения
+      каждый компонент отдельная папка в которой каркасный фай .php файл полей redux .php файл стилей .less 
+
+
+
+   разобраться и пременять Sticky Header
+      var lastScrollTop = 0;
+      $(window).scroll(function () {
+         var stickyNavTop = 10;
+         var stickyNav = function () {
+            var scrollTop = $(window).scrollTop();
+            if (scrollTop > stickyNavTop) {
+            $("header").addClass("sticky").addClass("scrolled");
+            } else {
+            $("header").removeClass("sticky").removeClass("scrolled");
+            }
+            if (scrollTop < lastScrollTop) {
+            $("header").removeClass("sticky");
+            }
+            lastScrollTop = scrollTop;
+         };
+         stickyNav();
+      });
+
+
+
+
+
    Добавить в v-2.1.0
-
-      в prod версию проекта не должны попадать файлы и папки с подчёркиваниями в перед названием
-
-
 
       +  Модуль Динамический адаптив   https://youtu.be/QKuMr575vlQ
       +  Модуль меню бургер     
