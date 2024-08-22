@@ -22,11 +22,7 @@ export const path = {
   ThemeName: THEME_NAME,
   srcPluginName: 'core-plugin', // set name your plugin for development version
   RootPath: ROOT_PATH,
-  proxy: [
-    `http://impex-rombt/`,
-    `http://web/rombt/`,
-    // `http://web/impex-rombt/`,
-  ],
+  proxy: [`http://premium_theme_1/`, `http://web/rombt/`],
 
   get src() {
     return {
