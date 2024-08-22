@@ -18,7 +18,7 @@ export const js = () => {
         mode: app.isProd ? 'production' : 'development',
         entry: {
           app: arrPathFilesJS, // Входная точка для фронтенда
-          ...(app.forPlugin && app.isWP ? { admin: app.path.js.src[1] } : {}), // Входная точка для админ панели
+          ...(app.forPlugin && app.isWP ? { admin: arrPathFilesJS[2] } : {}), //!! Входная точка для админ панели
         },
         output: {
           filename: '[name].main.min.js',
