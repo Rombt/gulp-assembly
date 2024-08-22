@@ -2,6 +2,9 @@ import webpackStream from 'webpack-stream';
 
 export const js = () => {
   const arrPathFilesJS = getJsEntries(app.path.js.src);
+  const arrPathPlugin = arrPathFilesJS.filter(path =>
+    path.includes(app.path.srcPluginName)
+  );
 
   return app.gulp
     .src(arrPathFilesJS, { sourcemaps: app.isDev, allowEmpty: true })
@@ -17,8 +20,8 @@ export const js = () => {
       webpackStream({
         mode: app.isProd ? 'production' : 'development',
         entry: {
-          app: arrPathFilesJS, // Входная точка для фронтенда
-          ...(app.forPlugin && app.isWP ? { admin: app.path.js.src[1] } : {}), // Входная точка для админ панели
+          app: arrPathFilesJS, // Входная точка для фронта
+          ...(app.forPlugin && app.isWP ? { admin: arrPathPlugin } : {}), // Входная точка для админ панели
         },
         output: {
           filename: '[name].main.min.js',
