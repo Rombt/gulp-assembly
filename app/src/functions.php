@@ -74,14 +74,14 @@ function simple_rmbt_premium_theme_1_content_width() {
 }
 add_action( 'after_setup_theme', 'simple_rmbt_premium_theme_1_content_width', 0 );
 
-function rmbt_premium_theme_1k_register_required_plugins() {
+function rmbt_premium_theme_1_register_required_plugins() {
 	$plugins = array(
 		array(
-			'name' => 'premium_theme_1k core',
+			'name' => 'premium_theme_1 core',
 			// The plugin name.
-			'slug' => 'premium_theme_1k-core',
+			'slug' => 'premium_theme_1-core',
 			// The plugin slug (typically the folder name).
-			'source' => plugin_dir_path( __FILE__ ) . '/plugins/premium_theme_1k-core',
+			'source' => plugin_dir_path( __FILE__ ) . '/plugins/premium_theme_1-core',
 			// The plugin source.
 			'required' => true,
 			// If false, the plugin is only 'recommended' instead of required.
@@ -128,7 +128,7 @@ function rmbt_premium_theme_1k_register_required_plugins() {
 
 	tgmpa( $plugins, $config );
 }
-add_action( 'tgmpa_register', 'rmbt_premium_theme_1k_register_required_plugins' );
+add_action( 'tgmpa_register', 'rmbt_premium_theme_1_register_required_plugins' );
 
 function rmbt_widgets_init() {
 	register_sidebar(
