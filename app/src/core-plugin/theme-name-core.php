@@ -1,13 +1,13 @@
 <?php
 /*
-Plugin Name: -core-plugin
+Plugin Name: rmbt_premium_theme_1
 Plugin URI: #
 Description:  
 Version: 1.0
 Author: Rombt
 Author URI: #
 License: Proprietary
-Text Domain: rmbt_ 
+Text Domain: rmbt_premium_theme_1 
 */
 
 if ( ! function_exists( 'add_action' ) ) {

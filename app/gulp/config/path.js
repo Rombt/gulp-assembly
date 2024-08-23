@@ -22,7 +22,7 @@ export const path = {
   ThemeName: THEME_NAME,
   srcPluginName: 'core-plugin', // set name your plugin for development version
   RootPath: ROOT_PATH,
-  proxy: [`http://premium_theme_1/`, `http://web/rombt/`],
+  proxy: [`http://multi-site/`, `http://web/rombt/`],
 
   get src() {
     return {
