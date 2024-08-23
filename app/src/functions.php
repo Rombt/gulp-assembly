@@ -81,7 +81,7 @@ function rmbt_premium_theme_1_register_required_plugins() {
 			// The plugin name.
 			'slug' => 'premium_theme_1-core',
 			// The plugin slug (typically the folder name).
-			'source' => plugin_dir_path( __FILE__ ) . '/plugins/premium_theme_1-core',
+			'source' => WP_PLUGIN_DIR . '/premium_theme_1-core',
 			// The plugin source.
 			'required' => true,
 			// If false, the plugin is only 'recommended' instead of required.
@@ -108,7 +108,7 @@ function rmbt_premium_theme_1_register_required_plugins() {
 	);
 
 	$config = array(
-		'id' => 'rombt-core-plugin',
+		'id' => 'rombt-tgmpa-plugin',
 		// Unique ID for hashing notices for multiple instances of TGMPA.
 		'default_path' => '',
 		// Default absolute path to bundled plugins.
