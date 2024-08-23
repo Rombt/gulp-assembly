@@ -7,9 +7,9 @@ defined( 'ABSPATH' ) || exit;
 Redux::set_section(
 	$opt_name,
 	array(
-		'title' => esc_html__( 'Front page', 'rmbt_renoteck' ),
+		'title' => esc_html__( 'Front page', 'rmbt_premium_theme_1' ),
 		'id' => 'settings_front-page',
-		'desc' => esc_html__( 'Front page settings', 'rmbt_renoteck' ),
+		'desc' => esc_html__( 'Front page settings', 'rmbt_premium_theme_1' ),
 		'customizer_width' => '450',
 		// 'subsection' => true,
 		// 'icon'             => 'el el-front',
@@ -19,7 +19,7 @@ Redux::set_section(
 				'id' => 'rmbt-no-img',
 				'type' => 'media',
 				'url' => true,
-				'title' => esc_html__( 'This picture will show if main picture is absent', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'This picture will show if main picture is absent', 'rmbt_premium_theme_1' ),
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(
@@ -29,64 +29,64 @@ Redux::set_section(
 			array(
 				'id' => 'rmbt-no-img_alt',
 				'type' => 'text',
-				'title' => esc_html__( 'Description for picture than is absent', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Description for picture than is absent', 'rmbt_premium_theme_1' ),
 			),
 
 			array(
 				'id' => 'rmbt-news-block_section-title',
 				'type' => 'text',
-				'title' => esc_html__( 'Title of News Block', 'rmbt_renoteck' ),
-				'default' => esc_html__( 'Останні новини', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Title of News Block', 'rmbt_premium_theme_1' ),
+				'default' => esc_html__( 'Останні новини', 'rmbt_premium_theme_1' ),
 			),
 
 			/*------------------ main_slider_screen accordion ------------------*/
 			array(
 				'id' => 'main_slider_screen-start',
 				'type' => 'accordion',
-				'title' => esc_html__( 'Title Section', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Title Section', 'rmbt_premium_theme_1' ),
 				'subtitle' => 'Add your content to the section \'Title\'',
 				'position' => 'start',
 			),
 			array(
 				'id' => 'main_slider_screen-gallery',
 				'type' => 'gallery',
-				'title' => esc_html__( 'Add/Edit Gallery on the main screen ', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Add/Edit Gallery on the main screen ', 'rmbt_premium_theme_1' ),
 			),
 			array(
 				'id' => 'front_page_title',
 				'type' => 'text',
-				'title' => esc_html__( 'Front page title', 'rmbt_renoteck' ),
-				'default' => __( wp_kses( 'Український виробник', 'post' ), 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Front page title', 'rmbt_premium_theme_1' ),
+				'default' => __( wp_kses( 'Український виробник', 'post' ), 'rmbt_premium_theme_1' ),
 			),
 			array(
 				'id' => 'front_page_subtitle',
 				'type' => 'text',
-				'title' => esc_html__( 'Front page title', 'rmbt_renoteck' ),
-				'default' => __( wp_kses( 'хлібопекарського і кондитерського обладнання', 'post' ), 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Front page title', 'rmbt_premium_theme_1' ),
+				'default' => __( wp_kses( 'хлібопекарського і кондитерського обладнання', 'post' ), 'rmbt_premium_theme_1' ),
 			),
 			array(
 				'id' => 'front_page_slogan',
 				'type' => 'text',
-				'title' => esc_html__( 'Front page subtitle', 'rmbt_renoteck' ),
-				'default' => esc_html__( 'Завжди надійний постачальник!', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Front page subtitle', 'rmbt_premium_theme_1' ),
+				'default' => esc_html__( 'Завжди надійний постачальник!', 'rmbt_premium_theme_1' ),
 			),
 			array(
 				'id' => 'button_title',
 				'type' => 'text',
-				'title' => esc_html__( 'Title of Main Screen Button', 'rmbt_renoteck' ),
-				'default' => esc_html__( 'Зв`язатись з нами', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Title of Main Screen Button', 'rmbt_premium_theme_1' ),
+				'default' => esc_html__( 'Зв`язатись з нами', 'rmbt_premium_theme_1' ),
 			),
 			array(
 				'id' => 'button_href',
 				'type' => 'text',
-				'title' => esc_html__( 'Link for button', 'rmbt_renoteck' ),
-				'default' => esc_html__( '#', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Link for button', 'rmbt_premium_theme_1' ),
+				'default' => esc_html__( '#', 'rmbt_premium_theme_1' ),
 			),
 			array(
 				'id' => 'background_picture',
 				'type' => 'media',
 				'url' => true,
-				'title' => esc_html__( 'Picture for Background', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Picture for Background', 'rmbt_premium_theme_1' ),
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(
@@ -104,50 +104,50 @@ Redux::set_section(
 			array(
 				'id' => 'introduction-start',
 				'type' => 'accordion',
-				'title' => esc_html__( 'Introduction Section', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Introduction Section', 'rmbt_premium_theme_1' ),
 				'subtitle' => 'Add your content to the section \'Introduction\'',
 				'position' => 'start',
 			),
 			array(
 				'id' => 'introduction_section-title',
 				'type' => 'text',
-				'title' => esc_html__( 'Introduction Section title', 'rmbt_renoteck' ),
-				'default' => esc_html__( 'Запрошуємо до нас', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Introduction Section title', 'rmbt_premium_theme_1' ),
+				'default' => esc_html__( 'Запрошуємо до нас', 'rmbt_premium_theme_1' ),
 			),
 			array(
 				'id' => 'introduction_section-text',
 				'type' => 'textarea',
-				'title' => esc_html__( 'Introduction Section Text', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Introduction Section Text', 'rmbt_premium_theme_1' ),
 			),
 			array(
 				'id' => 'introduction_first_block-title',
 				'type' => 'text',
-				'title' => esc_html__( 'Front page title', 'rmbt_renoteck' ),
-				'default' => esc_html__( 'Виробляємо', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Front page title', 'rmbt_premium_theme_1' ),
+				'default' => esc_html__( 'Виробляємо', 'rmbt_premium_theme_1' ),
 			),
 			array(
 				'id' => 'introduction_first_block-text',
 				'type' => 'textarea',
-				'title' => esc_html__( 'Introduction First Block Text', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Introduction First Block Text', 'rmbt_premium_theme_1' ),
 			),
 			array(
 				'id' => 'introduction_second_block-title',
 				'type' => 'text',
-				'title' => esc_html__( 'Front page title', 'rmbt_renoteck' ),
-				'default' => esc_html__( 'Ремонтуємо', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Front page title', 'rmbt_premium_theme_1' ),
+				'default' => esc_html__( 'Ремонтуємо', 'rmbt_premium_theme_1' ),
 			),
 
 			array(
 				'id' => 'introduction_second_block-text',
 				'type' => 'textarea',
-				'title' => esc_html__( 'Introduction Second Block Text', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Introduction Second Block Text', 'rmbt_premium_theme_1' ),
 			),
 
 			array(
 				'id' => 'introduction_image',
 				'type' => 'media',
 				'url' => true,
-				'title' => esc_html__( 'Picture for Introduction Block', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Picture for Introduction Block', 'rmbt_premium_theme_1' ),
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(
@@ -157,7 +157,7 @@ Redux::set_section(
 			array(
 				'id' => 'introduction_image_alt',
 				'type' => 'text',
-				'title' => esc_html__( 'Description of introduction image', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Description of introduction image', 'rmbt_premium_theme_1' ),
 			),
 			array(
 				'id' => 'introduction-end',
@@ -171,7 +171,7 @@ Redux::set_section(
 			array(
 				'id' => 'best-sellers_start',
 				'type' => 'accordion',
-				'title' => esc_html__( 'Best Sellers', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Best Sellers', 'rmbt_premium_theme_1' ),
 				'subtitle' => 'Add your content to the section \'Best Sellers\'',
 				'position' => 'start',
 			),
@@ -180,14 +180,14 @@ Redux::set_section(
 				'type' => 'text',
 				'title' => esc_html__(
 					'Best Sellers Section title',
-					'rmbt_renoteck'
+					'rmbt_premium_theme_1'
 				),
-				'default' => esc_html__( 'Хіти продажу', 'rmbt_renoteck' ),
+				'default' => esc_html__( 'Хіти продажу', 'rmbt_premium_theme_1' ),
 			),
 			array(
 				'id' => 'best-sellers_section_text',
 				'type' => 'textarea',
-				'title' => esc_html__( 'best-sellers Section Text', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'best-sellers Section Text', 'rmbt_premium_theme_1' ),
 			),
 			/*------------------  the start of image block -----------------*/
 			array(
@@ -195,15 +195,15 @@ Redux::set_section(
 				'type' => 'text',
 				'title' => esc_html__(
 					'Best Sellers of Goods number one',
-					'rmbt_renoteck'
+					'rmbt_premium_theme_1'
 				),
-				'default' => esc_html__( 'Ротаційна піч Impex Rotor (на пелетах)', 'rmbt_renoteck' ),
+				'default' => esc_html__( 'Ротаційна піч premium_theme_1 Rotor (на пелетах)', 'rmbt_premium_theme_1' ),
 			),
 			array(
 				'id' => 'best-sellers_image-one',
 				'type' => 'media',
 				'url' => true,
-				'title' => esc_html__( 'Picture of Best Sellers of Goods number one', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Picture of Best Sellers of Goods number one', 'rmbt_premium_theme_1' ),
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(
@@ -213,12 +213,12 @@ Redux::set_section(
 			array(
 				'id' => 'best-sellers_image-one_alt',
 				'type' => 'text',
-				'title' => esc_html__( 'Description of image', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Description of image', 'rmbt_premium_theme_1' ),
 			),
 			array(
 				'id' => 'best-sellers_href-one',
 				'type' => 'text',
-				'title' => esc_html__( 'Link To Page Goods', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Link To Page Goods', 'rmbt_premium_theme_1' ),
 			),
 
 			/*------------------  the end of image block -----------------*/
@@ -229,16 +229,16 @@ Redux::set_section(
 				'type' => 'text',
 				'title' => esc_html__(
 					'Best Sellers of Goods number two',
-					'rmbt_renoteck'
+					'rmbt_premium_theme_1'
 				),
-				'default' => esc_html__( 'Відсадочна машина Impex Drop-600', 'rmbt_renoteck' ),
+				'default' => esc_html__( 'Відсадочна машина premium_theme_1 Drop-600', 'rmbt_premium_theme_1' ),
 			),
 
 			array(
 				'id' => 'best-sellers_image-two',
 				'type' => 'media',
 				'url' => true,
-				'title' => esc_html__( 'Picture of Best Sellers of Goods number two', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Picture of Best Sellers of Goods number two', 'rmbt_premium_theme_1' ),
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(
@@ -249,12 +249,12 @@ Redux::set_section(
 			array(
 				'id' => 'best-sellers_image-two_alt',
 				'type' => 'text',
-				'title' => esc_html__( 'Description of image', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Description of image', 'rmbt_premium_theme_1' ),
 			),
 			array(
 				'id' => 'best-sellers_href-two',
 				'type' => 'text',
-				'title' => esc_html__( 'Link To Page Goods', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Link To Page Goods', 'rmbt_premium_theme_1' ),
 			),
 			/*------------------  the end of image block -----------------*/
 			/*------------------  the start of image block -----------------*/
@@ -264,16 +264,16 @@ Redux::set_section(
 				'type' => 'text',
 				'title' => esc_html__(
 					'Best Sellers of Goods number three',
-					'rmbt_renoteck'
+					'rmbt_premium_theme_1'
 				),
-				'default' => esc_html__( 'Глазурувальна машина Impex EM-300', 'rmbt_renoteck' ),
+				'default' => esc_html__( 'Глазурувальна машина premium_theme_1 EM-300', 'rmbt_premium_theme_1' ),
 			),
 
 			array(
 				'id' => 'best-sellers_image-three',
 				'type' => 'media',
 				'url' => true,
-				'title' => esc_html__( 'Picture of Best Sellers of Goods number three', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Picture of Best Sellers of Goods number three', 'rmbt_premium_theme_1' ),
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(
@@ -283,12 +283,12 @@ Redux::set_section(
 			array(
 				'id' => 'best-sellers_image-three_alt',
 				'type' => 'text',
-				'title' => esc_html__( 'Description of image', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Description of image', 'rmbt_premium_theme_1' ),
 			),
 			array(
 				'id' => 'best-sellers_href-three',
 				'type' => 'text',
-				'title' => esc_html__( 'Link To Page Goods', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Link To Page Goods', 'rmbt_premium_theme_1' ),
 			),
 			/*------------------  the end of image block -----------------*/
 
@@ -304,73 +304,73 @@ Redux::set_section(
 			array(
 				'id' => 'benefits-block_start',
 				'type' => 'accordion',
-				'title' => esc_html__( 'Benefit section', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Benefit section', 'rmbt_premium_theme_1' ),
 				'subtitle' => 'Add your content to the section \'benefits-block\'',
 				'position' => 'start',
 			),
 			array(
 				'id' => 'rmbt-benefits-block_section-title',
 				'type' => 'text',
-				'title' => esc_html__( 'benefits-block Section Title', 'rmbt_renoteck' ),
-				'default' => esc_html__( '', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'benefits-block Section Title', 'rmbt_premium_theme_1' ),
+				'default' => esc_html__( '', 'rmbt_premium_theme_1' ),
 			),
 			/*------------------  the start of first article block-----------------*/
 			array(
 				'id' => 'rmbt-benefits-block_article-title-1',
 				'type' => 'text',
-				'title' => esc_html__( 'Title of first article', 'rmbt_renoteck' ),
-				'default' => esc_html__( '', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Title of first article', 'rmbt_premium_theme_1' ),
+				'default' => esc_html__( '', 'rmbt_premium_theme_1' ),
 			),
 			array(
 				'id' => 'rmbt-benefits-block_article-text-1',
 				'type' => 'textarea',
-				'title' => esc_html__( 'Text of first article', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Text of first article', 'rmbt_premium_theme_1' ),
 			),
 			/*------------------  the end of first article block -----------------*/
 			/*------------------  the start of second article block-----------------*/
 			array(
 				'id' => 'rmbt-benefits-block_article-title-2',
 				'type' => 'text',
-				'title' => esc_html__( 'Title of second article', 'rmbt_renoteck' ),
-				'default' => esc_html__( '', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Title of second article', 'rmbt_premium_theme_1' ),
+				'default' => esc_html__( '', 'rmbt_premium_theme_1' ),
 			),
 			array(
 				'id' => 'rmbt-benefits-block_article-text-2',
 				'type' => 'textarea',
-				'title' => esc_html__( 'Text of second article', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Text of second article', 'rmbt_premium_theme_1' ),
 			),
 			/*------------------  the end of second article block -----------------*/
 			/*------------------  the start of third article block-----------------*/
 			array(
 				'id' => 'rmbt-benefits-block_article-title-3',
 				'type' => 'text',
-				'title' => esc_html__( 'Title of third article', 'rmbt_renoteck' ),
-				'default' => esc_html__( '', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Title of third article', 'rmbt_premium_theme_1' ),
+				'default' => esc_html__( '', 'rmbt_premium_theme_1' ),
 			),
 			array(
 				'id' => 'rmbt-benefits-block_article-text-3',
 				'type' => 'textarea',
-				'title' => esc_html__( 'Text of third article', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Text of third article', 'rmbt_premium_theme_1' ),
 			),
 			/*------------------  the end of third article block -----------------*/
 			/*------------------  the start of fourth article block-----------------*/
 			array(
 				'id' => 'rmbt-benefits-block_article-title-4',
 				'type' => 'text',
-				'title' => esc_html__( 'Title of fourth article', 'rmbt_renoteck' ),
-				'default' => esc_html__( '', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Title of fourth article', 'rmbt_premium_theme_1' ),
+				'default' => esc_html__( '', 'rmbt_premium_theme_1' ),
 			),
 			array(
 				'id' => 'rmbt-benefits-block_article-text-4',
 				'type' => 'textarea',
-				'title' => esc_html__( 'Text of fourth article', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Text of fourth article', 'rmbt_premium_theme_1' ),
 			),
 			/*------------------  the end of fourth article block -----------------*/
 			array(
 				'id' => 'rmbt-benefits-bg-picture_img-id',
 				'type' => 'media',
 				'url' => true,
-				'title' => esc_html__( 'Picture for benefits-bg-picture article', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Picture for benefits-bg-picture article', 'rmbt_premium_theme_1' ),
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(
@@ -380,8 +380,8 @@ Redux::set_section(
 			array(
 				'id' => 'rmbt-benefits-bg-picture_img-alt',
 				'type' => 'text',
-				'title' => esc_html__( 'Image description for benefits-bg-picture', 'rmbt_renoteck' ),
-				'default' => esc_html__( '', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Image description for benefits-bg-picture', 'rmbt_premium_theme_1' ),
+				'default' => esc_html__( '', 'rmbt_premium_theme_1' ),
 			),
 			array(
 				'id' => 'benefits-block_end',
@@ -395,7 +395,7 @@ Redux::set_section(
 			array(
 				'id' => 'facts-block_start',
 				'type' => 'accordion',
-				'title' => esc_html__( 'Facts Block Section', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Facts Block Section', 'rmbt_premium_theme_1' ),
 				'subtitle' => 'Add your content to the section \'Facts Block\'',
 				'position' => 'start',
 			),
@@ -403,39 +403,39 @@ Redux::set_section(
 			array(
 				'id' => 'rmbt-facts-block_article-title-1',
 				'type' => 'text',
-				'title' => esc_html__( 'Title of first article', 'rmbt_renoteck' ),
-				'default' => esc_html__( 'партнерів', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Title of first article', 'rmbt_premium_theme_1' ),
+				'default' => esc_html__( 'партнерів', 'rmbt_premium_theme_1' ),
 			),
 			array(
 				'id' => 'rmbt-facts-block_article-text-1',
 				'type' => 'text',
-				'title' => esc_html__( 'Text of first article', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Text of first article', 'rmbt_premium_theme_1' ),
 			),
 			/*------------------  the end of first article block -----------------*/
 			/*------------------  the start of first article block-----------------*/
 			array(
 				'id' => 'rmbt-facts-block_article-title-2',
 				'type' => 'text',
-				'title' => esc_html__( 'Title of first article', 'rmbt_renoteck' ),
-				'default' => esc_html__( 'проектів', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Title of first article', 'rmbt_premium_theme_1' ),
+				'default' => esc_html__( 'проектів', 'rmbt_premium_theme_1' ),
 			),
 			array(
 				'id' => 'rmbt-facts-block_article-text-2',
 				'type' => 'text',
-				'title' => esc_html__( 'Text of first article', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Text of first article', 'rmbt_premium_theme_1' ),
 			),
 			/*------------------  the end of first article block -----------------*/
 			/*------------------  the start of first article block-----------------*/
 			array(
 				'id' => 'rmbt-facts-block_article-title-3',
 				'type' => 'text',
-				'title' => esc_html__( 'Title of first article', 'rmbt_renoteck' ),
-				'default' => esc_html__( 'співробітників', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Title of first article', 'rmbt_premium_theme_1' ),
+				'default' => esc_html__( 'співробітників', 'rmbt_premium_theme_1' ),
 			),
 			array(
 				'id' => 'rmbt-facts-block_article-text-3',
 				'type' => 'text',
-				'title' => esc_html__( 'Text of first article', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Text of first article', 'rmbt_premium_theme_1' ),
 			),
 			/*------------------  the end of first article block -----------------*/
 			array(
@@ -450,7 +450,7 @@ Redux::set_section(
 			array(
 				'id' => 'clients-portfolio_start',
 				'type' => 'accordion',
-				'title' => esc_html__( 'Clients Portfolio Section', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Clients Portfolio Section', 'rmbt_premium_theme_1' ),
 				'subtitle' => 'Add your content to the section \'Clients Portfolio\'',
 				'position' => 'start',
 			),
@@ -458,7 +458,7 @@ Redux::set_section(
 			array(
 				'id' => 'clients-portfolio_gallery',
 				'type' => 'gallery',
-				'title' => esc_html__( 'Add/Edit Gallery on the main screen ', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Add/Edit Gallery on the main screen ', 'rmbt_premium_theme_1' ),
 			),
 
 			array(
@@ -485,27 +485,27 @@ Redux::set_section(
 			// array(
 			// 	'id' => 'benefits-block_start',
 			// 	'type' => 'accordion',
-			// 	'title' => esc_html__('benefits-block section', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('benefits-block section', 'rmbt_premium_theme_1'),
 			// 	'subtitle' => 'Add your content to the section \'benefits-block\'',
 			// 	'position' => 'start',
 			// ),
 			// array(
 			// 	'id' => 'rmbt-benefits-block_section-title',
 			// 	'type' => 'text',
-			// 	'title' => esc_html__('benefits-block Section Title', 'rmbt_renoteck'),
-			// 	'default' => esc_html__('', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('benefits-block Section Title', 'rmbt_premium_theme_1'),
+			// 	'default' => esc_html__('', 'rmbt_premium_theme_1'),
 			// ),
 			// /*------------------  the start of first article block-----------------*/
 			// array(
 			// 	'id' => 'rmbt-benefits-block_article-title-1',
 			// 	'type' => 'text',
-			// 	'title' => esc_html__('Title of first article', 'rmbt_renoteck'),
-			// 	'default' => esc_html__('', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Title of first article', 'rmbt_premium_theme_1'),
+			// 	'default' => esc_html__('', 'rmbt_premium_theme_1'),
 			// ),
 			// array(
 			// 	'id' => 'rmbt-benefits-block_article-text',
 			// 	'type' => 'text',
-			// 	'title' => esc_html__('Text of first article', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Text of first article', 'rmbt_premium_theme_1'),
 			// ),
 			// /*------------------  the end of first article block -----------------*/
 			// array(
@@ -525,14 +525,14 @@ Redux::set_section(
 			// array(
 			// 	'id' => 'front_page_slogan',
 			// 	'type' => 'text',
-			// 	'title' => esc_html__('Front page slogan', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Front page slogan', 'rmbt_premium_theme_1'),
 			// 	'default' => esc_html__('Explore food Menu'),
 			// ),
 			// array(
 			// 	'id' => 'front_page_slogan_label',
 			// 	'type' => 'media',
 			// 	'url' => true,
-			// 	'title' => esc_html__('Front Page label', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Front Page label', 'rmbt_premium_theme_1'),
 			// 	'compiler' => 'true',
 			// 	'preview_size' => 'full',
 			// 	'default' => array(
@@ -545,38 +545,38 @@ Redux::set_section(
 			// array(
 			// 	'id' => 'about-section-start',
 			// 	'type' => 'accordion',
-			// 	'title' => esc_html__('About Section', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('About Section', 'rmbt_premium_theme_1'),
 			// 	'subtitle' => 'Add your content to the section \'About\'',
 			// 	'position' => 'start',
 			// ),
 			// array(
 			// 	'id' => 'about_section_title',
 			// 	'type' => 'text',
-			// 	'title' => esc_html__('About Section Title', 'rmbt_renoteck'),
-			// 	'default' => esc_html__('About Restaurant ', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('About Section Title', 'rmbt_premium_theme_1'),
+			// 	'default' => esc_html__('About Restaurant ', 'rmbt_premium_theme_1'),
 			// ),
 			// array(
 			// 	'id' => 'about_section_text',
 			// 	'type' => 'textarea',
-			// 	'title' => esc_html__('About Section Text', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('About Section Text', 'rmbt_premium_theme_1'),
 			// ),
 			// array(
 			// 	'id' => 'about_section_button_title',
 			// 	'type' => 'text',
-			// 	'title' => esc_html__('About Button Title', 'rmbt_renoteck'),
-			// 	'default' => esc_html__('READ MORE', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('About Button Title', 'rmbt_premium_theme_1'),
+			// 	'default' => esc_html__('READ MORE', 'rmbt_premium_theme_1'),
 			// ),
 			// array(
 			// 	'id' => 'about_section_button_href',
 			// 	'type' => 'text',
-			// 	'title' => esc_html__('About Button link', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('About Button link', 'rmbt_premium_theme_1'),
 			// 	'default' => get_front_url() . "/about/",
 			// ),
 			// array(
 			// 	'id' => 'about_section_img_1',
 			// 	'type' => 'media',
 			// 	'url' => true,
-			// 	'title' => esc_html__('Imag 1', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Imag 1', 'rmbt_premium_theme_1'),
 			// 	'compiler' => 'true',
 			// 	'preview_size' => 'full',
 			// 	'default' => array(
@@ -587,7 +587,7 @@ Redux::set_section(
 			// 	'id' => 'about_section_img_2',
 			// 	'type' => 'media',
 			// 	'url' => true,
-			// 	'title' => esc_html__('Imag 2', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Imag 2', 'rmbt_premium_theme_1'),
 			// 	'compiler' => 'true',
 			// 	'preview_size' => 'full',
 			// 	'default' => array(
@@ -598,7 +598,7 @@ Redux::set_section(
 			// 	'id' => 'about_section_img_3',
 			// 	'type' => 'media',
 			// 	'url' => true,
-			// 	'title' => esc_html__('Imag 3', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Imag 3', 'rmbt_premium_theme_1'),
 			// 	'compiler' => 'true',
 			// 	'preview_size' => 'full',
 			// 	'default' => array(
@@ -609,7 +609,7 @@ Redux::set_section(
 			// 	'id' => 'about_section_img_4',
 			// 	'type' => 'media',
 			// 	'url' => true,
-			// 	'title' => esc_html__('Imag 4', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Imag 4', 'rmbt_premium_theme_1'),
 			// 	'compiler' => 'true',
 			// 	'preview_size' => 'full',
 			// 	'default' => array(
@@ -620,7 +620,7 @@ Redux::set_section(
 			// 	'id' => 'read_revie_button',
 			// 	'type' => 'media',
 			// 	'url' => true,
-			// 	'title' => esc_html__('Read Revie Button', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Read Revie Button', 'rmbt_premium_theme_1'),
 			// 	'compiler' => 'true',
 			// 	'preview_size' => 'full',
 			// 	'default' => array(
@@ -631,7 +631,7 @@ Redux::set_section(
 			// 	'id' => 'read_revie_icon',
 			// 	'type' => 'media',
 			// 	'url' => true,
-			// 	'title' => esc_html__('Read Revie Icon', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Read Revie Icon', 'rmbt_premium_theme_1'),
 			// 	'compiler' => 'true',
 			// 	'preview_size' => 'full',
 			// 	'default' => array(
@@ -641,14 +641,14 @@ Redux::set_section(
 			// array(
 			// 	'id' => 'read_revie_text',
 			// 	'type' => 'text',
-			// 	'title' => esc_html__('Read Revie Text', 'rmbt_renoteck'),
-			// 	'default' => __(wp_kses('READ <p>REVIEWS</p>', array('p' => array())), 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Read Revie Text', 'rmbt_premium_theme_1'),
+			// 	'default' => __(wp_kses('READ <p>REVIEWS</p>', array('p' => array())), 'rmbt_premium_theme_1'),
 			// ),
 			// array(
 			// 	'id' => 'front_delivery_icon',
 			// 	'type' => 'media',
 			// 	'url' => true,
-			// 	'title' => esc_html__('Front Delivery Icon', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Front Delivery Icon', 'rmbt_premium_theme_1'),
 			// 	'compiler' => 'true',
 			// 	'preview_size' => 'full',
 			// 	'default' => array(
@@ -658,8 +658,8 @@ Redux::set_section(
 			// array(
 			// 	'id' => 'front_delivery_text',
 			// 	'type' => 'text',
-			// 	'title' => esc_html__('Front Delivery Text', 'rmbt_renoteck'),
-			// 	'default' => __(wp_kses('CALL US NOW FOR <p>FRONT DELIVERY</p>', array('p' => array())), 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Front Delivery Text', 'rmbt_premium_theme_1'),
+			// 	'default' => __(wp_kses('CALL US NOW FOR <p>FRONT DELIVERY</p>', array('p' => array())), 'rmbt_premium_theme_1'),
 			// ),
 			// array(
 			// 	'id' => 'about-accordion-end',
@@ -670,7 +670,7 @@ Redux::set_section(
 			// array(
 			// 	'id' => 'today-accordion-start',
 			// 	'type' => 'accordion',
-			// 	'title' => esc_html__('Today Section', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Today Section', 'rmbt_premium_theme_1'),
 			// 	'subtitle' => 'Add your content to the section \'Today\'',
 			// 	'position' => 'start',
 			// ),
@@ -678,19 +678,19 @@ Redux::set_section(
 			// array(
 			// 	'id' => 'today_section_title',
 			// 	'type' => 'text',
-			// 	'title' => esc_html__('Front page title', 'rmbt_renoteck'),
-			// 	'default' => esc_html__('Today Special', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Front page title', 'rmbt_premium_theme_1'),
+			// 	'default' => esc_html__('Today Special', 'rmbt_premium_theme_1'),
 			// ),
 			// array(
 			// 	'id' => 'today-gallery',
 			// 	'type' => 'gallery',
-			// 	'title' => esc_html__('Add/Edit Today Gallery', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Add/Edit Today Gallery', 'rmbt_premium_theme_1'),
 			// ),
 			// array(
 			// 	'id' => 'today_section_footer_text',
 			// 	'type' => 'text',
-			// 	'title' => esc_html__('Footer Text', 'rmbt_renoteck'),
-			// 	'default' => __(wp_kses('front <p> delivery </p>', array('p' => array())), 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Footer Text', 'rmbt_premium_theme_1'),
+			// 	'default' => __(wp_kses('front <p> delivery </p>', array('p' => array())), 'rmbt_premium_theme_1'),
 			// ),
 
 			// array(
@@ -702,33 +702,33 @@ Redux::set_section(
 			// array(
 			// 	'id' => 'restaurant_menu-accordion-start',
 			// 	'type' => 'accordion',
-			// 	'title' => esc_html__('Restaurant Menu', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Restaurant Menu', 'rmbt_premium_theme_1'),
 			// 	'subtitle' => 'Add your content to the section \'Restaurant Menu\'',
 			// 	'position' => 'start',
 			// ),
 			// array(
 			// 	'id' => 'restaurant_menu-section_title',
 			// 	'type' => 'text',
-			// 	'title' => esc_html__('Restaurant Menu Section Title', 'rmbt_renoteck'),
-			// 	'default' => esc_html__('Food Menu', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Restaurant Menu Section Title', 'rmbt_premium_theme_1'),
+			// 	'default' => esc_html__('Food Menu', 'rmbt_premium_theme_1'),
 			// ),
 			// array(
 			// 	'id' => 'restaurant_menu-section_button_title',
 			// 	'type' => 'text',
-			// 	'title' => esc_html__('Restaurant Menu Button Title', 'rmbt_renoteck'),
-			// 	'default' => esc_html__('Explor food menu', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Restaurant Menu Button Title', 'rmbt_premium_theme_1'),
+			// 	'default' => esc_html__('Explor food menu', 'rmbt_premium_theme_1'),
 			// ),
 			// array(
 			// 	'id' => 'restaurant_menu-section_button_href',
 			// 	'type' => 'text',
-			// 	'title' => esc_html__('Restaurant Menu Button link', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Restaurant Menu Button link', 'rmbt_premium_theme_1'),
 			// 	'default' => get_front_url() . "/food-menu-items/",
 			// ),
 			// array(
 			// 	'id' => 'restaurant_menu-section_img_1',
 			// 	'type' => 'media',
 			// 	'url' => true,
-			// 	'title' => esc_html__('Imag right', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Imag right', 'rmbt_premium_theme_1'),
 			// 	'compiler' => 'true',
 			// 	'preview_size' => 'full',
 			// 	'default' => array(
@@ -739,7 +739,7 @@ Redux::set_section(
 			// 	'id' => 'restaurant_menu-section_img_2',
 			// 	'type' => 'media',
 			// 	'url' => true,
-			// 	'title' => esc_html__('Imag left', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Imag left', 'rmbt_premium_theme_1'),
 			// 	'compiler' => 'true',
 			// 	'preview_size' => 'full',
 			// 	'default' => array(
@@ -750,7 +750,7 @@ Redux::set_section(
 			// 	'id' => 'restaurant_menu-section_img_3',
 			// 	'type' => 'media',
 			// 	'url' => true,
-			// 	'title' => esc_html__('Imag down', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Imag down', 'rmbt_premium_theme_1'),
 			// 	'compiler' => 'true',
 			// 	'preview_size' => 'full',
 			// 	'default' => array(
@@ -761,8 +761,8 @@ Redux::set_section(
 			// 	'id' => 'restaurant_menu-section_icon_first_item_menu',
 			// 	'type' => 'media',
 			// 	'url' => true,
-			// 	'title' => esc_html__('Icon of the first menu item', 'rmbt_renoteck'),
-			// 	'subtitle' => esc_html__('Set if this item is for all food categories', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Icon of the first menu item', 'rmbt_premium_theme_1'),
+			// 	'subtitle' => esc_html__('Set if this item is for all food categories', 'rmbt_premium_theme_1'),
 			// 	'compiler' => 'true',
 			// 	'preview_size' => 'full',
 			// 	'default' => array(
@@ -780,7 +780,7 @@ Redux::set_section(
 			// array(
 			// 	'id' => 'clients-accordion-start',
 			// 	'type' => 'accordion',
-			// 	'title' => esc_html__('Clients section', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Clients section', 'rmbt_premium_theme_1'),
 			// 	'subtitle' => 'Add your content to the section \'Clients Menu\'',
 			// 	'position' => 'start',
 			// ),
@@ -788,14 +788,14 @@ Redux::set_section(
 			// array(
 			// 	'id' => 'clients-section_title',
 			// 	'type' => 'text',
-			// 	'title' => esc_html__('Clients menu section title', 'rmbt_renoteck'),
-			// 	'default' => esc_html__('Happy Clients', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Clients menu section title', 'rmbt_premium_theme_1'),
+			// 	'default' => esc_html__('Happy Clients', 'rmbt_premium_theme_1'),
 			// ),
 			// array(
 			// 	'id' => 'clients-section_background_img',
 			// 	'type' => 'media',
 			// 	'url' => true,
-			// 	'title' => esc_html__('Background Img', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Background Img', 'rmbt_premium_theme_1'),
 			// 	'compiler' => 'true',
 			// 	'preview_size' => 'full',
 			// 	'default' => array(
@@ -806,7 +806,7 @@ Redux::set_section(
 			// 	'id' => 'clients-section_avatar_default',
 			// 	'type' => 'media',
 			// 	'url' => true,
-			// 	'title' => esc_html__('Default avatar of client', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Default avatar of client', 'rmbt_premium_theme_1'),
 			// 	'compiler' => 'true',
 			// 	'preview_size' => 'thumbnail',
 			// 	'default' => array(
@@ -823,7 +823,7 @@ Redux::set_section(
 			// array(
 			// 	'id' => 'reserve-accordion-start',
 			// 	'type' => 'accordion',
-			// 	'title' => esc_html__('Reserve section', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Reserve section', 'rmbt_premium_theme_1'),
 			// 	'subtitle' => 'Add your content to the section \'Reserve Menu\'',
 			// 	'position' => 'start',
 			// ),
@@ -831,15 +831,15 @@ Redux::set_section(
 			// array(
 			// 	'id' => 'reserve-section_title',
 			// 	'type' => 'text',
-			// 	'title' => esc_html__('Reserve section title', 'rmbt_renoteck'),
-			// 	'default' => esc_html__('Reserve your table', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Reserve section title', 'rmbt_premium_theme_1'),
+			// 	'default' => esc_html__('Reserve your table', 'rmbt_premium_theme_1'),
 			// ),
 
 			// array(
 			// 	'id' => 'reserve-section_background_img',
 			// 	'type' => 'media',
 			// 	'url' => true,
-			// 	'title' => esc_html__('Reserve Section Img', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Reserve Section Img', 'rmbt_premium_theme_1'),
 			// 	'compiler' => 'true',
 			// 	'preview_size' => 'full',
 			// 	'default' => array(
@@ -849,25 +849,25 @@ Redux::set_section(
 			// array(
 			// 	'id' => 'reserve-section_text',
 			// 	'type' => 'text',
-			// 	'title' => esc_html__('Reserve section title', 'rmbt_renoteck'),
-			// 	'default' => esc_html__(wp_kses('<span>for a reservation</span>', 'rmbt_renoteck')),
+			// 	'title' => esc_html__('Reserve section title', 'rmbt_premium_theme_1'),
+			// 	'default' => esc_html__(wp_kses('<span>for a reservation</span>', 'rmbt_premium_theme_1')),
 			// ),
 			// array(
 			// 	'id' => 'reserve-section_text',
 			// 	'type' => 'text',
-			// 	'title' => esc_html__('Reserve section text', 'rmbt_renoteck'),
-			// 	'default' => esc_html__(wp_kses('You can also call <span>for a reservation</span>', 'rmbt_renoteck')),
+			// 	'title' => esc_html__('Reserve section text', 'rmbt_premium_theme_1'),
+			// 	'default' => esc_html__(wp_kses('You can also call <span>for a reservation</span>', 'rmbt_premium_theme_1')),
 			// ),
 			// array(
 			// 	'id' => 'reserve-section_button-title',
 			// 	'type' => 'text',
-			// 	'title' => esc_html__('Reserve section button title', 'rmbt_renoteck'),
-			// 	'default' => esc_html__('Make reservation', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Reserve section button title', 'rmbt_premium_theme_1'),
+			// 	'default' => esc_html__('Make reservation', 'rmbt_premium_theme_1'),
 			// ),
 			// array(
 			// 	'id' => 'reserve-section_button-href',
 			// 	'type' => 'text',
-			// 	'title' => esc_html__('Reserve section button href', 'rmbt_renoteck'),
+			// 	'title' => esc_html__('Reserve section button href', 'rmbt_premium_theme_1'),
 			// 	'default' => esc_url('#'),
 			// ),
 

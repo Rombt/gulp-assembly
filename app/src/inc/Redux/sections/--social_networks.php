@@ -1,11 +1,11 @@
 <?php
-defined('ABSPATH') || exit;
+defined( 'ABSPATH' ) || exit;
 
 
 Redux::set_section(
 	$opt_name,
 	array(
-		'title' => esc_html__('Social Networks Settings', 'rmbt_impex'),
+		'title' => esc_html__( 'Social Networks Settings', 'rmbt_premium_theme_1' ),
 		'id' => 'settings_social-networks',
 		'customizer_width' => '400px',
 		// 'icon'             => 'el el-network',
@@ -14,21 +14,21 @@ Redux::set_section(
 			array(
 				'id' => 'rmbt-social-networks_fb-section-start',
 				'type' => 'section',
-				'title' => esc_html__('Facebook section', 'rmbt_impex'),
-				// 'subtitle' => esc_html__('Enter phone number and set his name', 'rmbt_impex'),
+				'title' => esc_html__( 'Facebook section', 'rmbt_premium_theme_1' ),
+				// 'subtitle' => esc_html__('Enter phone number and set his name', 'rmbt_premium_theme_1'),
 				'indent' => true
 			),
 			array(
 				'id' => 'rmbt-social-networks_fb-link',
 				'type' => 'text',
-				'title' => esc_html__('Facebook link', 'rmbt_impex'),
-				'default' => esc_url('https://www.facebook.com/'),
+				'title' => esc_html__( 'Facebook link', 'rmbt_premium_theme_1' ),
+				'default' => esc_url( 'https://www.facebook.com/' ),
 			),
 			array(
 				'id' => 'rmbt-social-networks_fb_img-id',
 				'type' => 'media',
 				'url' => true,
-				'title' => esc_html__('Facebook icon', 'rmbt_impex'),
+				'title' => esc_html__( 'Facebook icon', 'rmbt_premium_theme_1' ),
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				// 'default' => array(
@@ -39,22 +39,22 @@ Redux::set_section(
 			array(
 				'id' => 'rmbt-social-networks-fb_img-alt',
 				'type' => 'text',
-				'title' => esc_html__('Image description for FaceBook icon', 'rmbt_impex'),
-				'default' => esc_html__('', 'rmbt_impex'),
+				'title' => esc_html__( 'Image description for FaceBook icon', 'rmbt_premium_theme_1' ),
+				'default' => esc_html__( '', 'rmbt_premium_theme_1' ),
 			),
 
 
 			array(
-				'id'     => 'rmbt-social-networks_fb-section-end',
-				'type'   => 'section',
+				'id' => 'rmbt-social-networks_fb-section-end',
+				'type' => 'section',
 				'indent' => false,
 			),
 
 			array(
 				'id' => 'rmbt-social-networks_instagram-section-start',
 				'type' => 'section',
-				'title' => esc_html__('Instagram section', 'rmbt_impex'),
-				// 'subtitle' => esc_html__('Enter phone number and set his name', 'rmbt_impex'),
+				'title' => esc_html__( 'Instagram section', 'rmbt_premium_theme_1' ),
+				// 'subtitle' => esc_html__('Enter phone number and set his name', 'rmbt_premium_theme_1'),
 				'indent' => true
 			),
 
@@ -62,14 +62,14 @@ Redux::set_section(
 			array(
 				'id' => 'rmbt-social-networks_instagram-link',
 				'type' => 'text',
-				'title' => esc_html__('Instagram link', 'rmbt_impex'),
+				'title' => esc_html__( 'Instagram link', 'rmbt_premium_theme_1' ),
 				'default' => 'https://www.instagram.com/',
 			),
 			array(
 				'id' => 'rmbt-social-networks_instagram_img-id',
 				'type' => 'media',
 				'url' => true,
-				'title' => esc_html__('Instagram icon', 'rmbt_impex'),
+				'title' => esc_html__( 'Instagram icon', 'rmbt_premium_theme_1' ),
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				// 'default' => array(
@@ -80,35 +80,35 @@ Redux::set_section(
 			array(
 				'id' => 'rmbt-social-networks_instagram_img-alt',
 				'type' => 'text',
-				'title' => esc_html__('Image description for instagram icon', 'rmbt_impex'),
-				'default' => esc_html__('', 'rmbt_impex'),
+				'title' => esc_html__( 'Image description for instagram icon', 'rmbt_premium_theme_1' ),
+				'default' => esc_html__( '', 'rmbt_premium_theme_1' ),
 			),
 
 			array(
-				'id'     => 'rmbt-social-networks_instagram-section-end',
-				'type'   => 'section',
+				'id' => 'rmbt-social-networks_instagram-section-end',
+				'type' => 'section',
 				'indent' => false,
 			),
 
 			array(
 				'id' => 'rmbt-social-networks_youtube-section-start',
 				'type' => 'section',
-				'title' => esc_html__('Youtube section', 'rmbt_impex'),
-				// 'subtitle' => esc_html__('Enter phone number and set his name', 'rmbt_impex'),
+				'title' => esc_html__( 'Youtube section', 'rmbt_premium_theme_1' ),
+				// 'subtitle' => esc_html__('Enter phone number and set his name', 'rmbt_premium_theme_1'),
 				'indent' => true
 			),
 
 			array(
 				'id' => 'rmbt-social-networks_youtube-link',
 				'type' => 'text',
-				'title' => esc_html__('Youtube link', 'rmbt_impex'),
-				'default' => esc_url('https://youtube.com/'),
+				'title' => esc_html__( 'Youtube link', 'rmbt_premium_theme_1' ),
+				'default' => esc_url( 'https://youtube.com/' ),
 			),
 			array(
 				'id' => 'rmbt-social-networks-youtube_img-id',
 				'type' => 'media',
 				'url' => true,
-				'title' => esc_html__('Youtube icon', 'rmbt_impex'),
+				'title' => esc_html__( 'Youtube icon', 'rmbt_premium_theme_1' ),
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				// 'default' => array(
@@ -118,13 +118,13 @@ Redux::set_section(
 			array(
 				'id' => 'rmbt-social-networks-youtube_img-alt',
 				'type' => 'text',
-				'title' => esc_html__('Image description for youtube icon', 'rmbt_impex'),
-				'default' => esc_html__('', 'rmbt_impex'),
+				'title' => esc_html__( 'Image description for youtube icon', 'rmbt_premium_theme_1' ),
+				'default' => esc_html__( '', 'rmbt_premium_theme_1' ),
 			),
 
 			array(
-				'id'     => 'rmbt-social-networks_youtube-section-end',
-				'type'   => 'section',
+				'id' => 'rmbt-social-networks_youtube-section-end',
+				'type' => 'section',
 				'indent' => false,
 			),
 

@@ -5,9 +5,9 @@
 Redux::set_section(
 	$opt_name,
 	array(
-		'title' => esc_html__( 'Blog Page', 'rmbt_renoteck' ),
+		'title' => esc_html__( 'Blog Page', 'rmbt_premium_theme_1' ),
 		'id' => 'settings_blog-page',
-		'desc' => esc_html__( 'Blog page settings', 'rmbt_renoteck' ),
+		'desc' => esc_html__( 'Blog page settings', 'rmbt_premium_theme_1' ),
 		'customizer_width' => '450',
 		'subsection' => true,
 		'fields' => array(
@@ -15,22 +15,22 @@ Redux::set_section(
 			array(
 				'id' => 'title_into_background_title_image_blog',
 				'type' => 'checkbox',
-				'title' => esc_html__( 'Title into Background title image', 'rmbt_renoteck' ),
-				'desc' => esc_html__( 'You need the Title into Background title image', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Title into Background title image', 'rmbt_premium_theme_1' ),
+				'desc' => esc_html__( 'You need the Title into Background title image', 'rmbt_premium_theme_1' ),
 				'default' => '1',
 			),
 
 			array(
 				'id' => 'article-blog_share-link',
 				'type' => 'text',
-				'title' => esc_html__( 'The Link Share ', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'The Link Share ', 'rmbt_premium_theme_1' ),
 				'default' => esc_url( '????????' ),		//todo
 			),
 			array(
 				'id' => 'article-icons_share_icon',
 				'type' => 'media',
 				'url' => true,
-				'title' => esc_html__( 'Share link icon', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Share link icon', 'rmbt_premium_theme_1' ),
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(
@@ -41,14 +41,14 @@ Redux::set_section(
 			array(
 				'id' => 'article-blog_instagram-link',
 				'type' => 'text',
-				'title' => esc_html__( 'Instagram link', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Instagram link', 'rmbt_premium_theme_1' ),
 				'default' => 'https://www.instagram.com/',
 			),
 			array(
 				'id' => 'article-blog_instagram_icon',
 				'type' => 'media',
 				'url' => true,
-				'title' => esc_html__( 'Instagram icon', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Instagram icon', 'rmbt_premium_theme_1' ),
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(
@@ -59,14 +59,14 @@ Redux::set_section(
 			array(
 				'id' => 'article-blog_facebook-link',
 				'type' => 'text',
-				'title' => esc_html__( 'Facebook link', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Facebook link', 'rmbt_premium_theme_1' ),
 				'default' => '"https://www.facebook.com/sharer/sharer.php?u=https:',
 			),
 			array(
 				'id' => 'article-blog_facebook_icon',
 				'type' => 'media',
 				'url' => true,
-				'title' => esc_html__( 'Facebook icon', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Facebook icon', 'rmbt_premium_theme_1' ),
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(
@@ -77,14 +77,14 @@ Redux::set_section(
 			array(
 				'id' => 'article-blog_twitt-link',
 				'type' => 'text',
-				'title' => esc_html__( 'Twitter link', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Twitter link', 'rmbt_premium_theme_1' ),
 				'default' => esc_url( 'https://twitter.com/share?url=https:' ),
 			),
 			array(
 				'id' => 'article-blog_twitt_icon',
 				'type' => 'media',
 				'url' => true,
-				'title' => esc_html__( 'Twitter icon', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Twitter icon', 'rmbt_premium_theme_1' ),
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(
@@ -96,8 +96,8 @@ Redux::set_section(
 				'id' => 'no-thumbnail',
 				'type' => 'media',
 				'url' => true,
-				'title' => esc_html__( 'If post does`t have thumbnail', 'rmbt_renoteck' ),
-				'subtitle' => esc_html__( 'For a large size thumbnail', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'If post does`t have thumbnail', 'rmbt_premium_theme_1' ),
+				'subtitle' => esc_html__( 'For a large size thumbnail', 'rmbt_premium_theme_1' ),
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(
@@ -109,8 +109,8 @@ Redux::set_section(
 				'id' => 'no-small-thumbnail',
 				'type' => 'media',
 				'url' => true,
-				'title' => esc_html__( 'If post does`t have thumbnail', 'rmbt_renoteck' ),
-				'subtitle' => esc_html__( 'For a small size thumbnail', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'If post does`t have thumbnail', 'rmbt_premium_theme_1' ),
+				'subtitle' => esc_html__( 'For a small size thumbnail', 'rmbt_premium_theme_1' ),
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(
@@ -121,14 +121,14 @@ Redux::set_section(
 			array(
 				'id' => 'article-blog_button-title',
 				'type' => 'text',
-				'title' => esc_html__( 'Button title', 'rmbt_renoteck' ),
-				'default' => esc_html__( 'read more', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'Button title', 'rmbt_premium_theme_1' ),
+				'default' => esc_html__( 'read more', 'rmbt_premium_theme_1' ),
 			),
 			array(
 				'id' => 'icon-heart-pasive',
 				'type' => 'media',
 				'url' => true,
-				'title' => esc_html__( 'The Like  Icon', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'The Like  Icon', 'rmbt_premium_theme_1' ),
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(
@@ -139,7 +139,7 @@ Redux::set_section(
 				'id' => 'icon-heart-active',
 				'type' => 'media',
 				'url' => true,
-				'title' => esc_html__( 'The Active Like  Icon', 'rmbt_renoteck' ),
+				'title' => esc_html__( 'The Active Like  Icon', 'rmbt_premium_theme_1' ),
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(
