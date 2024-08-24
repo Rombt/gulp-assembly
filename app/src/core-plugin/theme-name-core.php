@@ -1,13 +1,13 @@
 <?php
 /*
-Plugin Name: rmbt_premium_theme_1
+Plugin Name: rmbt-premium-theme-1
 Plugin URI: #
 Description:  
 Version: 1.0
 Author: Rombt
 Author URI: #
 License: Proprietary
-Text Domain: rmbt_premium_theme_1 
+Text Domain: rmbt-premium-theme-1  // ! you must use only chars those allow for url 
 */
 
 
