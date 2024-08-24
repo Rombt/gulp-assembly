@@ -337,42 +337,6 @@ function rmbt_redux_get_url( $id_field, $custom_default_url = '' ) {
 	}
 }
 
-/**
- * Sometimes Redux provides an incorrect URL. I haven't figured out why yet
- *	gets 
- * 	id of picture field 
- * 	custom's default(!) url  
- *	checks 
- * 	is exist
- * 		Redux
- * 		url default picture in Redux's field
- * 		
- * 
- *  DON`T WORKING !!!!
- */
-// function rmbt_redux_get_pic_url($id_field_pic, $custom_default_url = '')
-// {
-// 	global $rmbt_theme;
-
-// 	if (!class_exists('Redux') || !isset($rmbt_theme_options[$id_field_pic]['url']) || $rmbt_theme_options[$id_field_pic]['url'] === '') {
-// 		return esc_url($custom_default_url !== '' ? $custom_default_url : false);
-// 	}
-
-// 	if (isset($rmbt_theme_options[$id_field_pic]['url'])) {
-
-
-
-// 		if (stripos($rmbt_theme_options[$id_field_pic]['url'], get_site_url()) === 0) {
-
-// 			return $rmbt_theme_options[$id_field_pic]['url'];
-// 		} else {
-// 			$clear_url = str_replace($_SERVER['SERVER_NAME'] . '/', '', $rmbt_theme_options[$id_field_pic]['url']);
-
-// 			return esc_url(get_template_directory_uri() . $clear_url);
-// 		}
-// 	}
-// }
-
 function rmbt_redux_img( $id_field_pic, $alt = "", $id_svg = '' ) {
 	global $rmbt_theme_options;
 
@@ -457,4 +421,21 @@ function rmbt_redux_field_to_ul( $id_field, $mod = 'tel', $before_str = '', $aft
 			return '<a href="' . $mod . ':' . $arr_numbers[0] . '">' . $before_str . trim( $arr_numbers[0] ) . $after_str . '</a>';
 		}
 	}
+}
+
+function file_search_recursive( $directory, $pattern, &$results = [] ) {
+	$files = scandir( $directory );
+
+	foreach ( $files as $key => $value ) {
+		$path = realpath( $directory . DIRECTORY_SEPARATOR . $value );
+
+		if ( ! is_dir( $path ) ) {
+			if ( preg_match( $pattern, $value ) ) {
+				$results[] = $path;
+			}
+		} elseif ( $value != "." && $value != ".." ) {
+			file_search_recursive( $path, $pattern, $results );
+		}
+	}
+	return $results;
 }

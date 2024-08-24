@@ -1,17 +1,17 @@
 <?php
 /*
-Plugin Name: rmbt_premium_theme_1
+Plugin Name: rmbt-premium-theme-1 core
 Plugin URI: #
 Description:  
 Version: 1.0
 Author: Rombt
 Author URI: #
 License: Proprietary
-Text Domain: rmbt_premium_theme_1 
+Text Domain: rmbt-premium-theme-1 //! you must use only chars those allow for url 
 */
 
 
-define( 'RMBT_TEXT_DOMAIN_THEME', 'rmbt_premium_theme_1' );
+define( 'RMBT_TEXT_DOMAIN_THEME', 'premium-theme-1' );  //! you must use only chars those allow for url 
 
 if ( ! function_exists( 'add_action' ) ) {
 	echo 'Hi there!  I\'m just a plugin, not much I can do when called directly.';
@@ -19,8 +19,8 @@ if ( ! function_exists( 'add_action' ) ) {
 }
 
 function rmbt_theme_scripts_admin() {
-	wp_enqueue_style( RMBT_TEXT_DOMAIN_THEME . '-admin_main', plugins_url() . '/core-plugin/assets/styles/main-style.min.css', array(), '1.0', 'all' );
-	wp_enqueue_script( RMBT_TEXT_DOMAIN_THEME . '-admin_core_jq', plugins_url() . '/core-plugin/assets/js/admin.main.min.js', array( 'jquery' ), '1.0', true );
+	wp_enqueue_style( RMBT_TEXT_DOMAIN_THEME . '-admin_main', plugins_url() . '/' . RMBT_TEXT_DOMAIN_THEME . '-core/assets/styles/main-style.min.css', array(), '1.0', 'all' );
+	wp_enqueue_script( RMBT_TEXT_DOMAIN_THEME . '-admin_core', plugins_url() . '/' . RMBT_TEXT_DOMAIN_THEME . '-core/assets/js/admin.main.min.js', array( 'jquery' ), '1.0', true );
 }
 add_action( 'admin_enqueue_scripts', 'rmbt_theme_scripts_admin' );
 

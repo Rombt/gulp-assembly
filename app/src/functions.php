@@ -1,6 +1,6 @@
 <?php
 
-define( 'RMBT_TEXT_DOMAIN_THEME', 'rmbt_premium_theme_1' );
+define( 'RMBT_TEXT_DOMAIN_THEME', 'rmbt-premium-theme-1' );		//! you must use only chars those allow for url 
 define( 'rmbt_PATH_THEME', get_template_directory() );
 define( 'rmbt_URL_THEME', esc_url( get_template_directory_uri() ) );
 
@@ -10,6 +10,10 @@ require_once get_template_directory() . '/inc/functions/general-front.php';
 // require_once get_template_directory() . '/inc/functions/ajax.php';
 
 if ( class_exists( 'ReduxFramework' ) ) {
+	define( 'RMBT_PATH_REDUX_SECTIONS', array(
+		'/app/src/inc/Redux/sections',
+		'/app/src/template-parts',
+	) );
 	require_once get_template_directory() . '/inc/Redux/redux-options.php';
 }
 
