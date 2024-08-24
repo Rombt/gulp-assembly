@@ -140,8 +140,9 @@ Redux::set_args( $opt_name, $args );
  * ---> START SECTIONS
  */
 
-// require_once dirname( __FILE__ ) . '/sections/header.php';
-// require_once dirname( __FILE__ ) . '/sections/hero_block.php';
-// require_once dirname( __FILE__ ) . '/sections/about_us_page.php';
-// require_once dirname( __FILE__ ) . '/sections/our_services.php';
-// require_once dirname( __FILE__ ) . '/sections/our_projects.php';
+foreach ( RMBT_PATH_REDUX_SECTIONS as $sections_path ) {
+	$result = file_search_recursive( get_template_directory() . $sections_path, '/\.redux\.php$/' );
+	foreach ( $result as $file ) {
+		require_once $file;
+	}
+}
