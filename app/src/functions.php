@@ -156,51 +156,51 @@ function rmbt_widgets_init() {
 }
 add_action( 'widgets_init', 'rmbt_widgets_init' );
 
-function menu_item_css_classes( $classes, $item, $args, $depth ) {
-	if ( isset( $args->add_li_class ) ) {
-		$classes[] = $args->add_li_class;
-	}
-
-	return $classes;
-}
-add_filter( 'nav_menu_css_class', 'menu_item_css_classes', 10, 4 );
-
-function rmbt_add_class_menus_links( $atts, $item, $args ) {
-	if ( isset( $args->add_link_class ) ) {
-		$atts['class'] = $args->add_link_class;
-	}
-
-	return $atts;
-}
-add_filter( 'nav_menu_link_attributes', 'rmbt_add_class_menus_links', 10, 3 );
-
-function rmbt_change_menus_items( $args, $item ) {
-	global $rmbt_premium_theme_1_options;
-
-	if ( $args->theme_location === 'food_menu' ) {
-		if ( class_exists( 'ReduxFramework' ) && in_array( 'menu-item-type-post_type_archive', $item->classes ) ) {
-			$args->before = '<img src="' . $rmbt_premium_theme_1_options['restaurant_menu-section_icon_first_item_menu']['url'] . '" alt="">';
-		} else {
-			if ( class_exists( 'ACF' ) ) {
-				$args->before = '<img src="' . get_field( 'food-categories-icon', 'term_' . $item->object_id ) . '" alt="">';
-			}
-		}
-	} elseif ( $args->theme_location === 'brows_recipes' ) {
-		if ( class_exists( 'ACF' ) ) {
-			$args->before = '<img src="' . get_field( 'food-recepes-icon', 'term_' . $item->object_id ) . '" alt="">';
-		}
-	}
-
-	return $args;
-}
-add_filter( 'nav_menu_item_args', 'rmbt_change_menus_items', 10, 2 );
-
 
 
 
 
 //===========================================================================
 //===========================================================================
+
+// function menu_item_css_classes( $classes, $item, $args, $depth ) {
+// 	if ( isset( $args->add_li_class ) ) {
+// 		$classes[] = $args->add_li_class;
+// 	}
+
+// 	return $classes;
+// }
+// add_filter( 'nav_menu_css_class', 'menu_item_css_classes', 10, 4 );
+
+// function rmbt_add_class_menus_links( $atts, $item, $args ) {
+// 	if ( isset( $args->add_link_class ) ) {
+// 		$atts['class'] = $args->add_link_class;
+// 	}
+
+// 	return $atts;
+// }
+// add_filter( 'nav_menu_link_attributes', 'rmbt_add_class_menus_links', 10, 3 );
+
+// function rmbt_change_menus_items( $args, $item ) {
+// 	global $rmbt_premium_theme_1_options;
+
+// 	if ( $args->theme_location === 'food_menu' ) {
+// 		if ( class_exists( 'ReduxFramework' ) && in_array( 'menu-item-type-post_type_archive', $item->classes ) ) {
+// 			$args->before = '<img src="' . $rmbt_premium_theme_1_options['restaurant_menu-section_icon_first_item_menu']['url'] . '" alt="">';
+// 		} else {
+// 			if ( class_exists( 'ACF' ) ) {
+// 				$args->before = '<img src="' . get_field( 'food-categories-icon', 'term_' . $item->object_id ) . '" alt="">';
+// 			}
+// 		}
+// 	} elseif ( $args->theme_location === 'brows_recipes' ) {
+// 		if ( class_exists( 'ACF' ) ) {
+// 			$args->before = '<img src="' . get_field( 'food-recepes-icon', 'term_' . $item->object_id ) . '" alt="">';
+// 		}
+// 	}
+
+// 	return $args;
+// }
+// add_filter( 'nav_menu_item_args', 'rmbt_change_menus_items', 10, 2 );
 
 
 // function enqueue_comment_reply() {
