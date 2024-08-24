@@ -10,16 +10,19 @@ License: Proprietary
 Text Domain: rmbt_premium_theme_1 
 */
 
+
+define( 'RMBT_TEXT_DOMAIN_THEME', 'rmbt_premium_theme_1' );
+
 if ( ! function_exists( 'add_action' ) ) {
 	echo 'Hi there!  I\'m just a plugin, not much I can do when called directly.';
 	exit;
 }
 
-function rmbt_premium_theme_1_scripts_admin() {
-	wp_enqueue_style( 'rmbt_premium_theme_1-admin_main', plugins_url() . '/core-plugin/assets/styles/main-style.min.css', array(), '1.0', 'all' );
-	wp_enqueue_script( 'rmbt_premium_theme_1-admin_core_jq', plugins_url() . '/core-plugin/assets/js/admin.main.min.js', array( 'jquery' ), '1.0', true );
+function rmbt_theme_scripts_admin() {
+	wp_enqueue_style( RMBT_TEXT_DOMAIN_THEME . '-admin_main', plugins_url() . '/core-plugin/assets/styles/main-style.min.css', array(), '1.0', 'all' );
+	wp_enqueue_script( RMBT_TEXT_DOMAIN_THEME . '-admin_core_jq', plugins_url() . '/core-plugin/assets/js/admin.main.min.js', array( 'jquery' ), '1.0', true );
 }
-add_action( 'admin_enqueue_scripts', 'rmbt_premium_theme_1_scripts_admin' );
+add_action( 'admin_enqueue_scripts', 'rmbt_theme_scripts_admin' );
 
 require_once plugin_dir_path( __FILE__ ) . 'inc/general-admin.php';
 // require_once plugin_dir_path(__FILE__) . 'inc/ajax.php';

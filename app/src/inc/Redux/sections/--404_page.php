@@ -6,9 +6,9 @@ defined( 'ABSPATH' ) || exit;
 Redux::set_section(
 	$opt_name,
 	array(
-		'title' => esc_html__( '404 page', 'rmbt_premium_theme_1' ),
+		'title' => esc_html__( '404 page', RMBT_TEXT_DOMAIN_THEME ),
 		'id' => 'settings_404-page',
-		'desc' => esc_html__( '404 page settings', 'rmbt_premium_theme_1' ),
+		'desc' => esc_html__( '404 page settings', RMBT_TEXT_DOMAIN_THEME ),
 		'customizer_width' => '450',
 		'subsection' => true,
 		// 'icon'             => 'el el-home',
@@ -17,7 +17,7 @@ Redux::set_section(
 				'id' => '404_img',
 				'type' => 'media',
 				'url' => true,
-				'title' => esc_html__( '404 image', 'rmbt_premium_theme_1' ),
+				'title' => esc_html__( '404 image', RMBT_TEXT_DOMAIN_THEME ),
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(

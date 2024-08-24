@@ -37,7 +37,7 @@
 					<header class="page-header ">
 						<h1 class="page-title">
 							<?php // if ( is_search() ) {
-							// 	printf( esc_html__( 'Результати пошуку для: %s', 'rmbt_premium_theme_1' ), '<span>' . get_search_query() . '</span>' );
+							// 	printf( esc_html__( 'Результати пошуку для: %s', RMBT_TEXT_DOMAIN_THEME ), '<span>' . get_search_query() . '</span>' );
 							// } else if ( is_home() || is_page( [ 'blog', 'Blog' ] ) ) {
 							// 	echo "Новини нашої компанії";
 							// } ?>

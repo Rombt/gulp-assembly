@@ -7,7 +7,7 @@ if ( ! class_exists( 'Redux' ) ) {
 }
 
 // $opt_name = 'restaurant_site_options';
-$opt_name = 'rmbt_premium_theme_1_options';
+$opt_name = 'rmbt_theme_options';
 $dir = dirname( __FILE__ ) . DIRECTORY_SEPARATOR;
 $sample_patterns = array();
 
@@ -145,108 +145,3 @@ require_once dirname( __FILE__ ) . '/sections/hero_block.php';
 require_once dirname( __FILE__ ) . '/sections/about_us_page.php';
 require_once dirname( __FILE__ ) . '/sections/our_services.php';
 require_once dirname( __FILE__ ) . '/sections/our_projects.php';
-
-require_once dirname( __FILE__ ) . '/sections/social_networks.php';
-require_once dirname( __FILE__ ) . '/sections/contacts.php';
-require_once dirname( __FILE__ ) . '/sections/call-to-action-block.php';
-require_once dirname( __FILE__ ) . '/sections/financing-block.php';
-require_once dirname( __FILE__ ) . '/sections/testimonials-block.php';
-require_once dirname( __FILE__ ) . '/sections/we_do_block.php';
-require_once dirname( __FILE__ ) . '/sections/service-areas-block.php';
-require_once dirname( __FILE__ ) . '/sections/finansing-about-block.php';
-require_once dirname( __FILE__ ) . '/sections/about_us_hero_block.php';
-require_once dirname( __FILE__ ) . '/sections/our-approach-block.php';
-require_once dirname( __FILE__ ) . '/sections/how-did-we-get-here-block.php';
-require_once dirname( __FILE__ ) . '/sections/our_team_block.php';
-require_once dirname( __FILE__ ) . '/sections/how-does-our-referral-block.php';
-require_once dirname( __FILE__ ) . '/sections/amazing-reward-levels-block.php';
-require_once dirname( __FILE__ ) . '/sections/capture_form-referral.php';
-
-
-
-// require_once dirname(__FILE__) . '/sections/front_page.php';
-// require_once dirname(__FILE__) . '/sections/equipment-categories.php';
-// require_once dirname(__FILE__) . '/sections/equipment_categories_group.php';
-// require_once dirname(__FILE__) . '/sections/archive-bakery.php';
-// require_once dirname(__FILE__) . '/sections/search_block.php';
-
-
-
-
-// require_once dirname(__FILE__) . '/sections/menu_page.php';
-// require_once dirname(__FILE__) . '/sections/blog_page.php';
-// require_once dirname(__FILE__) . '/sections/search_page.php';
-// require_once dirname(__FILE__) . '/sections/404_page.php';
-
-
-// require_once dirname(__FILE__) . '/sections/footer.php';
-// require_once dirname(__FILE__) . '/sections/copyright.php';
-// require_once dirname(__FILE__) . '/sections/phone_numbers.php';
-// require_once dirname(__FILE__) . '/sections/app_buttons.php';
-
-
-
-
-
-
-
-
-
-Redux::set_section(
-	$opt_name,
-	array(
-		'id' => 'my-divide-sample',
-		'type' => 'divide',
-	)
-);
-
-
-//===============================================================================
-//===============================================================================
-
-// if (!function_exists('change_defaults')) {
-// 	/**
-// 	 * Filter hook for filtering the default value of any given field. Very useful in development mode.
-// 	 *
-// 	 * @param array $defaults Default value array.
-// 	 *
-// 	 * @return array
-// 	 */
-// 	function change_defaults(array $defaults): array
-// 	{
-// 		$defaults['str_replace'] = esc_html__('Testing filter hook!', 'your-textdomain-here');
-
-// 		return $defaults;
-// 	}
-// }
-
-
-
-// if (!function_exists('redux_custom_sanitize')) {
-// 	/**
-// 	 * Function to be used if the field sanitize argument.
-// 	 * Return value MUST be the formatted or cleaned text to display.
-// 	 *
-// 	 * @param string $value Value to evaluate or clean.  Required.
-// 	 *
-// 	 * @return string
-// 	 */
-// 	function redux_custom_sanitize(string $value): string
-// 	{
-// 		$return = '';
-
-// 		foreach (explode(' ', $value) as $w) {
-// 			foreach (str_split($w) as $k => $v) {
-// 				if (($k + 1) % 2 !== 0 && ctype_alpha($v)) {
-// 					$return .= mb_strtoupper($v);
-// 				} else {
-// 					$return .= $v;
-// 				}
-// 			}
-
-// 			$return .= ' ';
-// 		}
-
-// 		return $return;
-// 	}
-// }
