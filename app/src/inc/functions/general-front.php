@@ -323,15 +323,15 @@ function rmbt_trim_excerpt( $length, $text = '' ) {
 function rmbt_redux_get_url( $id_field, $custom_default_url = '' ) {
 	global $rmbt_theme_options;
 
-	if ( ! class_exists( 'Redux' ) || ! isset( $mbt_theme[ $id_field ] ) || $mbt_theme[ $id_field ] === '' ) {
+	if ( ! class_exists( 'Redux' ) || ! isset( $rmbt_theme_options[ $id_field ] ) || $rmbt_theme_options[ $id_field ] === '' ) {
 		return esc_url( $custom_default_url !== '' ? $custom_default_url : false );
 	}
 
-	if ( isset( $mbt_theme[ $id_field ] ) ) {
-		if ( stripos( $mbt_theme[ $id_field ], get_site_url() ) === 0 ) {
-			return $mbt_theme[ $id_field ];
+	if ( isset( $rmbt_theme_options[ $id_field ] ) ) {
+		if ( stripos( $rmbt_theme_options[ $id_field ], get_site_url() ) === 0 ) {
+			return $rmbt_theme_options[ $id_field ];
 		} else {
-			$clear_url = str_replace( $_SERVER['SERVER_NAME'] . '/', '', $mbt_theme[ $id_field ] );
+			$clear_url = str_replace( $_SERVER['SERVER_NAME'] . '/', '', $rmbt_theme_options[ $id_field ] );
 			return esc_url( get_template_directory_uri() . $clear_url );
 		}
 	}
@@ -352,21 +352,21 @@ function rmbt_redux_get_url( $id_field, $custom_default_url = '' ) {
  */
 // function rmbt_redux_get_pic_url($id_field_pic, $custom_default_url = '')
 // {
-// 	global $mbt_theme;
+// 	global $rmbt_theme;
 
-// 	if (!class_exists('Redux') || !isset($mbt_theme[$id_field_pic]['url']) || $mbt_theme[$id_field_pic]['url'] === '') {
+// 	if (!class_exists('Redux') || !isset($rmbt_theme_options[$id_field_pic]['url']) || $rmbt_theme_options[$id_field_pic]['url'] === '') {
 // 		return esc_url($custom_default_url !== '' ? $custom_default_url : false);
 // 	}
 
-// 	if (isset($mbt_theme[$id_field_pic]['url'])) {
+// 	if (isset($rmbt_theme_options[$id_field_pic]['url'])) {
 
 
 
-// 		if (stripos($mbt_theme[$id_field_pic]['url'], get_site_url()) === 0) {
+// 		if (stripos($rmbt_theme_options[$id_field_pic]['url'], get_site_url()) === 0) {
 
-// 			return $mbt_theme[$id_field_pic]['url'];
+// 			return $rmbt_theme_options[$id_field_pic]['url'];
 // 		} else {
-// 			$clear_url = str_replace($_SERVER['SERVER_NAME'] . '/', '', $mbt_theme[$id_field_pic]['url']);
+// 			$clear_url = str_replace($_SERVER['SERVER_NAME'] . '/', '', $rmbt_theme_options[$id_field_pic]['url']);
 
 // 			return esc_url(get_template_directory_uri() . $clear_url);
 // 		}
@@ -374,12 +374,12 @@ function rmbt_redux_get_url( $id_field, $custom_default_url = '' ) {
 // }
 
 function rmbt_redux_img( $id_field_pic, $alt = "", $id_svg = '' ) {
-	global $mbt_theme;
+	global $rmbt_theme_options;
 
 
 
-	if ( $mbt_theme[ $id_field_pic ]['url'] ) {
-		return '<img src="' . $mbt_theme[ $id_field_pic ]['url'] . '" alt="' . $alt . '">';
+	if ( $rmbt_theme_options[ $id_field_pic ]['url'] ) {
+		return '<img src="' . $rmbt_theme_options[ $id_field_pic ]['url'] . '" alt="' . $alt . '">';
 	} else {
 		if ( $id_svg == '' ) {
 			return;
@@ -392,17 +392,17 @@ function rmbt_redux_img( $id_field_pic, $alt = "", $id_svg = '' ) {
 }
 
 function rmbt_get_redux_field( $id_field, $kses = false, $all_tags_allowed = false ) {
-	global $mbt_theme;
+	global $rmbt_theme_options;
 
-	if ( ! array_key_exists( $id_field, $mbt_theme ) )
+	if ( ! array_key_exists( $id_field, $rmbt_theme_options ) )
 		return "";
 
 	if ( $kses ) {
-		return class_exists( 'ReduxFramework' ) ? wp_kses( $mbt_theme[ $id_field ], 'post' ) : "";
+		return class_exists( 'ReduxFramework' ) ? wp_kses( $rmbt_theme_options[ $id_field ], 'post' ) : "";
 	} elseif ( $all_tags_allowed ) {
-		return class_exists( 'ReduxFramework' ) ? $mbt_theme[ $id_field ] : "";
+		return class_exists( 'ReduxFramework' ) ? $rmbt_theme_options[ $id_field ] : "";
 	}
-	return class_exists( 'ReduxFramework' ) ? esc_html__( $mbt_theme[ $id_field ] ) : "";
+	return class_exists( 'ReduxFramework' ) ? esc_html__( $rmbt_theme_options[ $id_field ] ) : "";
 }
 
 function rmbt_phone_number_clear_redux( $phone_number ) {
@@ -414,9 +414,9 @@ function rmbt_phone_number_clear_redux( $phone_number ) {
  * for equipment-categories.php only
  */
 function get_arr_names_cat_equip() {
-	global $mbt_theme;
+	global $rmbt_theme;
 
-	$arr_redux_fields = array_filter( $mbt_theme, function ($var) {
+	$arr_redux_fields = array_filter( $rmbt_theme, function ($var) {
 		if ( str_contains( $var, 'equipCatPage' ) && str_contains( $var, '_article-title' ) ) {
 			return $var;
 		}
