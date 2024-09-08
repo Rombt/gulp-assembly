@@ -1,9 +1,8 @@
+# Gulp assembly for HTML coding and WordPress developement
 
-#  Gulp assembly for HTML coding and WordPress developement
+It is based on [Фрілансер по життю](https://youtu.be/jU88mLuLWlk) **_Thank you very much Zhenya!!_**
 
-It is based on [Фрілансер по життю](https://youtu.be/jU88mLuLWlk) ***Thank you very much Zhenya!!***
-
-
+node v16.17.1
 
 Performs all necessary operations for fast and convenient development of projects of any complexity. Main features include:
 
@@ -25,7 +24,6 @@ Performs all necessary operations for fast and convenient development of project
 
 - And many other features
 
-
 all js files are compiled into the main file
 
 for frontend app.main.min.js
@@ -38,185 +36,174 @@ for frontend assets/js/app.js
 
 for backend (example admin panel WP) plugin/assets/js/admin.js
 
-  
+## Describing
 
-##  Describing
-
-####  htmlcoding:
+#### htmlcoding:
 
 Final files are moved to the 'docs' folder so that your sites can be exhibited on GitHub Pages
 
-####  Wordpres development:
+#### Wordpres development:
 
 Final files of theme are moved to the 'my_thyemename' folder.
 
 Final files of core-plagin are moved to the 'plugins/core-plugin' folder
 
-  
-  
-
-#  Struckture project
+# Struckture project
 
 > plugins
 
->> core-plugin
+> > core-plugin
 
 > themes
 
->> my_theme_name
+> > my_theme_name
 
->>> .gitignore
+> > > .gitignore
 
->>> docs
+> > > docs
 
->>> app
+> > > app
 
->>>> src
+> > > > src
 
-  
+> > > > > > html
 
->>>>>> html
+> > > > > > > index.html
 
->>>>>>> index.html
+> > > > > > > template-parts
 
->>>>>>> template-parts
+> > > > > > > > parts
 
->>>>>>>> parts
+> > > > > > > > components
 
->>>>>>>> components
+> > > > > index.php
 
-  
+> > > > > functions.php
 
->>>>> index.php
+> > > > > header.php
 
->>>>> functions.php
+> > > > > footer.php
 
->>>>> header.php
+> > > > > screenshot.png
 
->>>>> footer.php
+> > > > > readme.txt
 
->>>>> screenshot.png
+> > > > > style.css
 
->>>>> readme.txt
+> > > > > _and another wordpress theme files_
 
->>>>> style.css
+> > > > > template-parts
 
->>>>> _and another wordpress theme files_
+> > > > > > parts
 
->>>>> template-parts
+> > > > > > components
 
->>>>>> parts
+> > > > > core-plugin for wordpress theme
 
->>>>>> components
+> > > > > > html_parts
 
-  
+> > > > > > assets
 
->>>>> core-plugin for wordpress theme
+> > > > > > > img
 
->>>>>> html_parts
+> > > > > > > js
 
->>>>>> assets
+> > > > > > > > admin.main.min.js
 
->>>>>>> img
+> > > > > > > styles
 
->>>>>>> js
+> > > > > > > > mainstyle.min.css
 
->>>>>>>> admin.main.min.js
+> > > > > assets
 
->>>>>>> styles
+> > > > > > fonts
 
->>>>>>>> mainstyle.min.css
+> > > > > > img
 
->>>>> assets
+> > > > > > > svgicons
 
->>>>>> fonts
+> > > > > > > icons
 
->>>>>> img
+> > > > > > js
 
->>>>>>> svgicons
+> > > > > > > libs
 
->>>>>>> icons
+> > > > > > > moduls
 
->>>>>> js
+> > > > > > > > isWebp.js
 
->>>>>>> libs
+> > > > > > > app.main.js
 
->>>>>>> moduls
+> > > > > > styles
 
->>>>>>>> isWebp.js
+> > > > > > > parts
 
->>>>>>> app.main.js
+> > > > > > > components
 
->>>>>> styles
+> > > > > > > fonts.less
 
->>>>>>> parts
+> > > > > > > main-style.less
 
->>>>>>> components
+> > > > > > > mixins.less
 
->>>>>>> fonts.less
+> > > > > > > reset.css
 
->>>>>>> main-style.less
+> > > > > > > smart-grid.less
 
->>>>>>> mixins.less
+> > > > > > > variables.less
 
->>>>>>> reset.css
+> > > > > inc
 
->>>>>>> smart-grid.less
+> > > > > > functions
 
->>>>>>> variables.less
+> > > > > > widgets
 
->>>>> inc
+> > > > gulp
 
->>>>>> functions
+> > > > node_modules
 
->>>>>> widgets
+> > > > gulpfile.babel.js
 
->>>> gulp
+> > > > package.json
 
->>>> node_modules
+> > > > .gitignore
 
->>>> gulpfile.babel.js
+> > > > > config
 
->>>> package.json
+> > > > > > ftp_config.js
 
->>>> .gitignore
+> > > > > > grid_config.js
 
->>>>> config
+> > > > > > path.js
 
->>>>>> ftp_config.js
+> > > > > > plugins.js
 
->>>>>> grid_config.js
+> > > > > tasks
 
->>>>>> path.js
+> > > > > > php.js
 
->>>>>> plugins.js
+> > > > > > html.js
 
->>>>> tasks
+> > > > > > styles.js
 
->>>>>> php.js
+> > > > > > js.js
 
->>>>>> html.js
+> > > > > > images.js
 
->>>>>> styles.js
+> > > > > > reset_wpPlugin.js
 
->>>>>> js.js
+> > > > > > reset.js
 
->>>>>> images.js
+> > > > > > server.js
 
->>>>>> reset_wpPlugin.js
+> > > > > > copy.js
 
->>>>>> reset.js
+> > > > > > fonts.js
 
->>>>>> server.js
+> > > > > > svgsprite.js
 
->>>>>> copy.js
+> > > > > > grid.js
 
->>>>>> fonts.js
+> > > > > > ftp.js
 
->>>>>> svgsprite.js
-
->>>>>> grid.js
-
->>>>>> ftp.js
-
->>>>>> zip.js
+> > > > > > zip.js
