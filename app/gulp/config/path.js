@@ -22,7 +22,7 @@ export const path = {
   ThemeName: THEME_NAME,
   srcPluginName: 'core-plugin', // set name your plugin for development version
   RootPath: ROOT_PATH,
-  proxy: [`http://multisite/`, `http://multisite/`],
+  proxy: [`http://premium-theme-1.multisite/`, `http://premium-theme-1.multisite/`],
 
   get src() {
     return {
@@ -83,6 +83,7 @@ export const path = {
           `!${this.src.php}/${this.srcPluginName}/**/*.php`,
           `!${this.src.php}/**/_*.php`, // these are drafts and files which marked for delete
           `!${this.src.php}/**/-*.php`, // these are files which queued up to develope
+          `${app.isProd ? `!${this.src.php}/**/_*/**` : null}`,
         ],
         plug: [
           `${this.src.php}/${this.srcPluginName}/**/*.php`,
@@ -117,7 +118,12 @@ export const path = {
             app.isSASS ? '.sass' : '.less'
           }`,
           `${this.src.php}/assets/styles/parts/**/*${app.isSASS ? '.sass' : '.less'}`,
+          // систем может быть несколько но подключатся к проекту должна только одна
+          `${this.src.php}/assets/styles/style-systems/simple_1/*${
+            app.isSASS ? '.sass' : '.less'
+          }`,
           `${this.src.php}/template-parts/**/*${app.isSASS ? '.sass' : '.less'}`,
+          `${app.isProd ? `!${this.src.php}/**/_*/**` : null}`,
         ],
         plug: [
           `${this.src.plug}/assets/styles/main-style${app.isSASS ? '.sass' : '.less'}`,
@@ -187,7 +193,11 @@ export const path = {
     const path = {
       src: {
         html: [`${this.src.php}/assets/js/app.js`],
-        php: [`${this.src.php}/assets/js/app.js`, `${this.src.php}/template-parts/`],
+        php: [
+          `${this.src.php}/assets/js/app.js`,
+          `${this.src.php}/template-parts/`,
+          `${app.isProd ? `!${this.src.php}/template-parts/_templates/` : null}`,
+        ],
         plug: [`${this.src.plug}/assets/js/admin.js`],
       },
       prod: {
