@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: rmbt-premium-theme-1 core
+Plugin Name: __rmbt-premium-theme-1 core
 Plugin URI: #
 Description:  
 Version: 1.0
@@ -57,7 +57,7 @@ function rmbt_get_images_sizes() {
 				'height' => 250,
 				'crop' => true,
 			),
-		)
+		),
 	);
 }
 add_action( 'plugin_loaded', 'rmbt_register_image_size' );
