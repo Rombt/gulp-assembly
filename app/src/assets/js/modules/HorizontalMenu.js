@@ -45,7 +45,7 @@ class HorizontalMenu {
 
       */
 
-  // классы скрытых пунтков меню или контейнеров
+  // классы скрытых пунктов меню или контейнеров
   hiddenMenuCont = {
     overflow: 'overflow-cont',
     drop: 'drop-cont',
@@ -59,7 +59,7 @@ class HorizontalMenu {
     burger: 'burger',
   };
 
-  // пользаватеьские классы определяющие внешний вид открытых пунтков меню или контейнеров
+  // пользовательские классы определяющие внешний вид открытых пунктов меню или контейнеров
   contAdditionalClasses = {
     drop: [],
     overflow: [],
@@ -467,7 +467,7 @@ class HorizontalMenu {
           currentMenu
             .querySelectorAll(`.${this.hiddenMenuCont.overflow}>li`)
             .forEach(li => {
-              currentMenu.querySelector('nav>ul:first-child').append(li);
+              currentMenu.querySelector('ul').append(li);
             });
         }
       }
@@ -636,11 +636,11 @@ class HorizontalMenu {
 }
 
 const param = {
-  containersMenu: ['.cont-horizont-menu'],
+  containersMenu: ['.rmbt-menu-horizontal'],
   contAdditionalClasses: {
-    drop: ['add-drop-1', 'add-drop-2', 'add-drop-3'],
-    overflow: ['add-overflow-1', 'add-overflow-2', 'add-overflow-3'],
-    burger: ['add-burger-1', 'add-burger-2', 'add-burger-3'],
+    drop: ['add-drop-1'],
+    overflow: ['add-overflow-1'],
+    burger: ['add-burger-1'],
   },
   // animation: {
   //     drop: {},
