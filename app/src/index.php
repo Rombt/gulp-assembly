@@ -1,47 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php get_header(); ?>
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="./assets/styles/main-style.min.css" rel="stylesheet" type="text/css">
-	<title>Document</title>
-</head>
-
-<body>
-
-	<div class="test-1"></div>
-
-
-
-
-	<script src='./assets/js/app.main.min.js'></script>
-</body>
-
-</html>
-
-
-
-
-<!-- !!!!!!!!!!!    YOU CAN CHOOSE ONE OF THIS VARIANTS !!!!!!!!!!!!!!-->
-
-<?php // get_header(); ?>
-
-<!-- <main>
+<main>
 	<div class="wrapper-section">
 		<div class="rmbt-full-width rmbt-blog-full-width">
 			<section class="rmbt-container rmbt-blog">
 				<div class="rmbt-blog__row">
 
 					<header class="page-header ">
-						<h1 class="page-title">
-							<?php // if ( is_search() ) {
-							// 	printf( esc_html__( 'Результати пошуку для: %s', RMBT_TEXT_DOMAIN_THEME ), '<span>' . get_search_query() . '</span>' );
-							// } else if ( is_home() || is_page( [ 'blog', 'Blog' ] ) ) {
-							// 	echo "Новини нашої компанії";
-							// } ?>
-						</h1>
 					</header>
 					<div class="rmbt-blog__col">
 						<?php
@@ -66,11 +31,11 @@
 			</section>
 		</div>
 	</div>
-</main> -->
+</main>
 
 
-<?php // get_template_part( 'template-parts/components/pagination' ); ?>
+<?php get_template_part( 'template-parts/components/pagination' ); ?>
 
 
 
-<?php // get_footer();
+<?php get_footer();
