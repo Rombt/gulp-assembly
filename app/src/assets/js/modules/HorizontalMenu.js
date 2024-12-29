@@ -541,6 +541,10 @@ class HorizontalMenu {
     document.addEventListener('click', e => {
       let target = e.target;
 
+
+      console.log("target = ", target);
+
+
       if (target.classList.contains(this.iconDropClassOpen)) {
         let parentMenu = target.closest('li');
         let currentMenu = parentMenu.querySelector(`.${this.hiddenMenuCont.drop}`);
