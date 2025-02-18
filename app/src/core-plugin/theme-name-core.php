@@ -60,7 +60,7 @@ function rmbt_get_images_sizes() {
 		),
 	);
 }
-add_action( 'plugin_loaded', 'rmbt_register_image_size' );
+add_action( 'plugins_loaded', 'rmbt_register_image_size' );
 function rmbt_register_image_size() {
 	if ( function_exists( 'rmbt_get_images_sizes' ) ) {
 		foreach ( rmbt_get_images_sizes() as $post_type => $sizes ) {
