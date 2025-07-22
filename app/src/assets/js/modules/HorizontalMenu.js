@@ -1,4 +1,4 @@
-class HorizontalMenu {
+export default class HorizontalMenu {
   /*
           const param = {
               containersMenu: ['.cont-horizont-menu', '.wrap-drop-menu', '#my-menu'], // селекторы контейнеров меню которые будут обрабатываться
@@ -134,9 +134,9 @@ class HorizontalMenu {
       // throw new Error('Menus with given selectors  are absent on this page');
       return;
     }
-    if (param?.contAdditionalClasses?.length > 0) {
-      this.contAdditionalClasses = param.contAdditionalClasses;
-    }
+
+    this.contAdditionalClasses = param.contAdditionalClasses || {};
+
     this.iconOverflow = this._clearClassName(param.iconOverflow || 'icon-overflow');
     this.iconBurger = this._clearClassName(param.iconBurger || 'icon-burger');
     this.iconBurgerOpen = this._clearClassName(
@@ -274,7 +274,7 @@ class HorizontalMenu {
         prevRightlastLi = prevlastLi.getBoundingClientRect().right;
       }
 
-      const sumDistanceBetweenLi = [
+      let sumDistanceBetweenLi = [
         ...contCurrentMenu.querySelectorAll('nav>ul:first-child>li'),
       ].reduce((accum, li, i, arr) => {
         if (arr[i + 1])
@@ -283,14 +283,20 @@ class HorizontalMenu {
         return accum;
       }, 0);
 
-      if (currentRightCont - prevRightCont < 0) {
-        // окно уменьшается
+      if (sumDistanceBetweenLi == 0) {
+        sumDistanceBetweenLi =
+          currentRightMainUl -
+          contCurrentMenu.querySelector('nav>ul>li').getBoundingClientRect().right;
+      }
+
+      if (currentRightCont - prevRightCont <= 0) {
+        // окно уменьшается или только загрузилось
         if (prevRightlastLi > currentRightMainUl) overflowCont.prepend(prevlastLi);
       } else {
         // окно увеличивается
         if (
           sumDistanceBetweenLi - widthPrevFirstOverflowLi >
-          (paddingRightCurrentMenu + paddingRightcontCurrentMenu) * 2
+          paddingRightCurrentMenu + paddingRightcontCurrentMenu
         ) {
           if (prevFirstOverflowLi) currentMenu.append(prevFirstOverflowLi);
           if (
@@ -312,7 +318,6 @@ class HorizontalMenu {
     if (subMenus.length > 0) {
       subMenus.forEach(subMenu => {
         subMenu.classList.add(this.hiddenMenuCont.drop, this.hiddenClass);
-        this.setAdditionalClassesToCont(subMenu, 'drop');
       });
     }
   }
@@ -326,8 +331,22 @@ class HorizontalMenu {
       classesIteration(this.contAdditionalClasses.burger);
     }
 
-    function classesIteration(arrClassies) {
-      arrClassies.forEach(_class => currentMenu.classList.add(_class));
+    function classesIteration(arrClasses) {
+      arrClasses?.forEach(_class => currentMenu.classList.add(_class));
+    }
+  }
+
+  delAdditionalClassesToCont(currentMenu, typeMenu) {
+    if (typeMenu === 'overflow') {
+      classesIteration(this.contAdditionalClasses.overflow);
+    } else if (typeMenu === 'drop') {
+      classesIteration(this.contAdditionalClasses.drop);
+    } else if (typeMenu === 'burger') {
+      classesIteration(this.contAdditionalClasses.burger);
+    }
+
+    function classesIteration(arrClasses) {
+      arrClasses?.forEach(_class => currentMenu.classList.remove(_class));
     }
   }
 
@@ -441,6 +460,8 @@ class HorizontalMenu {
     if (modifier === this.modifiers.burger) {
       document.querySelector('html').classList.remove('rmbt-lock');
     }
+
+    this.delAdditionalClassesToCont(currentMenu, modifier);
     this.changeStateIconMenu(currentMenu, modifier, 'close');
   }
 
@@ -475,6 +496,7 @@ class HorizontalMenu {
 
     currentMenu.classList.add(this.visibleClass + '_' + modifier);
     this.changeStateIconMenu(currentMenu, modifier, 'open');
+    this.setAdditionalClassesToCont(currentMenu, modifier); //!!
     this.checkSingle(currentMenu);
   }
 
@@ -540,10 +562,6 @@ class HorizontalMenu {
   listenClick() {
     document.addEventListener('click', e => {
       let target = e.target;
-
-
-      console.log("target = ", target);
-
 
       if (target.classList.contains(this.iconDropClassOpen)) {
         let parentMenu = target.closest('li');
@@ -697,33 +715,27 @@ class HorizontalMenu {
   }
 }
 
-const param = {
-  containersMenu: ['.cont-horizont-menu', '.wrap-drop-menu', '#my-menu'],
-  contAdditionalClasses: {
-    drop: [],
-    overflow: [],
-    burger: [],
-  },
-  animation: {
-    drop: {
-      open: {
-      },
-      close: {
-      },
-    },
-    overflow: {
-      open: {
-      },
-      close: {
-      },
-    },
-    burger: {
-      open: {
-      },
-      close: {
-      },
-    },
-  },
-};
+// const param = {
+//   containersMenu: ['.rmbt-mh-header__col'],
+//   contAdditionalClasses: {
+//     drop: [],
+//     overflow: [],
+//     burger: [],
+//   },
+//   animation: {
+//     drop: {
+//       open: {},
+//       close: {},
+//     },
+//     overflow: {
+//       open: {},
+//       close: {},
+//     },
+//     burger: {
+//       open: {},
+//       close: {},
+//     },
+//   },
+// };
 
-const menu = new HorizontalMenu(param);
+// const menu = new HorizontalMenu(param);
