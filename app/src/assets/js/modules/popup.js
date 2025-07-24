@@ -1,4 +1,4 @@
-const mainContainerClass = 'main-wrap'; // class your main container
+const mainContainerClass = 'rmbt-page-wrap'; // class your main container
 //todo получать продолжительность анимации автоматичиски прочитав значени свайства transition
 const timeout = 800; // the quantity  of milliseconds must be equal to the animation time in the 'transition' property in the file popup.js
 
