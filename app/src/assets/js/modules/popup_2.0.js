@@ -21,7 +21,6 @@ if (nl_popupToggles.length > 0) {
       } else {
         popupOpen(currentPopup);
       }
-      // popupToggle.toggleAttribute('rmbt-popup-open');
     });
   });
 }
@@ -41,7 +40,7 @@ function popupOpen(currentPopup) {
 
     currentPopup.classList.add('rmbt-popup-open');
     currentPopup.addEventListener('click', function (e) {
-      if (!e.target.closest('.rmbt-popup_content')) {
+      if (!e.target.closest('.rmbt-popup__content')) {
         popupClose(e.target.closest('.rmbt-popup'));
       }
     });
